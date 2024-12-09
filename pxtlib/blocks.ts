@@ -769,11 +769,11 @@ namespace pxt.blocks {
         };
         _blockDefinitions[pxtc.ON_START_TYPE] = {
             name: Util.lf("on start event"),
-            tooltip: Util.lf("Run code when the program starts"),
+            tooltip: Util.lf("Rodar código quando o programa iniciar"),
             url: '/blocks/on-start',
             category: "loops", // The real category is overriden by apptarget in blocklyloader.ts
             block: {
-                message0: Util.lf("on start %1 %2")
+                message0: Util.lf("ao iniciar faça %1 %2")
             }
         };
         _blockDefinitions[pxtc.PAUSE_UNTIL_TYPE] = {

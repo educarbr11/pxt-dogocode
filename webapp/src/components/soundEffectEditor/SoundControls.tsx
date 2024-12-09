@@ -58,13 +58,13 @@ export const SoundControls = (props: SoundControlsProps) => {
             id: "linear"
         },
         {
-            label: pxt.U.lf("Curve"),
+            label: pxt.U.lf("Curvo"),
             leftIcon: "xicon sound-curve",
             title: pxt.U.lf("Curve"),
             id: "curve"
         },
         {
-            label: pxt.U.lf("Logarithmic"),
+            label: pxt.U.lf("Logarítmico"),
             leftIcon: "xicon sound-logarithmic",
             title: pxt.U.lf("Logarithmic"),
             id: "logarithmic"
@@ -82,7 +82,7 @@ export const SoundControls = (props: SoundControlsProps) => {
         {
             label: pxt.U.lf("None"),
             leftIcon: "xicon sound-none",
-            title: pxt.U.lf("None"),
+            title: pxt.U.lf("Nenhum"),
             id: "none"
         },
         {
@@ -98,7 +98,7 @@ export const SoundControls = (props: SoundControlsProps) => {
             id: "tremolo"
         },
         {
-            label: pxt.U.lf("Warble"),
+            label: pxt.U.lf("Oscilação"),
             leftIcon: "xicon sound-warble",
             title: pxt.U.lf("Warble"),
             id: "warble"
@@ -180,7 +180,7 @@ export const SoundControls = (props: SoundControlsProps) => {
         <div className="waveform-and-duration">
             <div className="waveform-control-label">
                 <span className="sound-label">
-                    {pxt.U.lf("Waveform:")}
+                    {pxt.U.lf("Forma de onda:")}
                 </span>
                 <span className="sound-label waveform-name">
                     {getWaveformLabel(sound.wave)}
@@ -196,7 +196,7 @@ export const SoundControls = (props: SoundControlsProps) => {
                 />
                 <div className="duration-controls">
                     <div className="sound-label">
-                        {pxt.U.lf("Duration (ms)")}
+                        {pxt.U.lf("Duração (ms)")}
                     </div>
                     <Input
                         id="sound-duration-input"
@@ -206,15 +206,15 @@ export const SoundControls = (props: SoundControlsProps) => {
                         treatSpaceAsEnter={true}
                         onBlur={onDurationChange}
                         onOptionSelected={onOptionSelected}
-                        ariaLabel={pxt.U.lf("Duration (milliseconds)")}
+                        ariaLabel={pxt.U.lf("}Duração (milliseconds)")}
                         options={
                             {
                                 [pxt.U.lf("100 ms")]: "100",
                                 [pxt.U.lf("200 ms")]: "200",
                                 [pxt.U.lf("500 ms")]: "500",
-                                [pxt.U.lf("1 second")]: "1000",
-                                [pxt.U.lf("2 seconds")]: "2000",
-                                [pxt.U.lf("5 seconds")]: "5000"
+                                [pxt.U.lf("1 segundo")]: "1000",
+                                [pxt.U.lf("2 segundos")]: "2000",
+                                [pxt.U.lf("5 segundos")]: "5000"
                             }
                         }
                     />
@@ -225,11 +225,11 @@ export const SoundControls = (props: SoundControlsProps) => {
             <div className="frequency-graph">
                 <div className="sound-graph-header">
                     <span className="sound-label">
-                        {pxt.U.lf("Frequency")}
+                        {pxt.U.lf("Frequência")}
                     </span>
                     <div className="dropdown-and-label">
                         <span className="sound-label">
-                            {pxt.U.lf("Effect")}
+                            {pxt.U.lf("Efeito")}
                         </span>
 
                         <Dropdown
@@ -242,7 +242,7 @@ export const SoundControls = (props: SoundControlsProps) => {
                     </div>
                     <div className="dropdown-and-label">
                         <span className="sound-label">
-                            {pxt.U.lf("Interpolation")}
+                            {pxt.U.lf("Interpolação")}
                         </span>
                         <Dropdown
                             id="interpolation-dropdown"
@@ -289,10 +289,10 @@ export const SoundControls = (props: SoundControlsProps) => {
 
 function getWaveformLabel(waveform: pxt.assets.SoundWaveForm) {
     switch (waveform) {
-        case "sine": return pxt.U.lf("Sine");
-        case "square": return pxt.U.lf("Square");
-        case "triangle": return pxt.U.lf("Triangle");
-        case "sawtooth": return pxt.U.lf("Sawtooth");
-        case "noise": return pxt.U.lf("Noise");
+        case "sine": return pxt.U.lf("Senoidal");
+        case "square": return pxt.U.lf("Quadrado");
+        case "triangle": return pxt.U.lf("Triângulo");
+        case "sawtooth": return pxt.U.lf("Dente de serra");
+        case "noise": return pxt.U.lf("Barulho");
     }
 }
