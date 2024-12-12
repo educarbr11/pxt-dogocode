@@ -149,7 +149,7 @@ export class CreateFunctionDialog extends data.Component<ISettingsProps, CreateF
         const { visible } = this.state;
         const actions: sui.ModalButton[] = [
             {
-                label: lf("Done"),
+                label: lf("Feito"),
                 onclick: this.confirm,
                 icon: "check",
                 className: "approve positive"
@@ -160,14 +160,14 @@ export class CreateFunctionDialog extends data.Component<ISettingsProps, CreateF
         return (
             <sui.Modal isOpen={visible} className={classes} size="large"
                 closeOnEscape={false} closeIcon={true} closeOnDimmerClick={false} closeOnDocumentClick={false}
-                dimmer={true} buttons={actions} header={lf("Edit Function")}
+                dimmer={true} buttons={actions} header={lf("Editar Bloco")}
                 modalDidOpen={this.modalDidOpen}
                 onClose={this.hide}
             >
                 <div>
-                    <span className="ui text mobile only paramlabel">{lf("Add a parameter")}</span>
+                    <span className="ui text mobile only paramlabel">{lf("Adicionar um parâmetro")}</span>
                     <div className="horizontal list">
-                        <span className="ui text mobile hide paramlabel">{lf("Add a parameter")}</span>
+                        <span className="ui text mobile hide paramlabel">{lf("Adicionar um parâmetro")}</span>
                         {types.map(t =>
                             <sui.Button
                                 key={t.typeName}
@@ -191,22 +191,22 @@ export class CreateFunctionDialog extends data.Component<ISettingsProps, CreateF
         if (!CreateFunctionDialog.cachedFunctionTypes) {
             const types: pxt.FunctionEditorTypeInfo[] = [
                 {
-                    label: lf("Text"),
+                    label: lf("Texto"),
                     typeName: "string",
                     icon: pxt.blocks.defaultIconForArgType("string")
                 },
                 {
-                    label: lf("Boolean"),
+                    label: lf("Boleano"),
                     typeName: "boolean",
                     icon: pxt.blocks.defaultIconForArgType("boolean")
                 },
                 {
-                    label: lf("Number"),
+                    label: lf("Número"),
                     typeName: "number",
                     icon: pxt.blocks.defaultIconForArgType("number")
                 },
                 {
-                    label: lf("Array"),
+                    label: lf("Lista"),
                     typeName: "Array",
                     icon: pxt.blocks.defaultIconForArgType("Array")
                 }

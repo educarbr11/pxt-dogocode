@@ -531,7 +531,7 @@ export function createFunctionsFlyoutCategory(workspace: Blockly.WorkspaceSvg) {
         .filter(def => def.getDescendants(false).some(child => child.type === "function_return" && child.getInputTargetBlock("RETURN_VALUE")))
         .map(def => def.getField("function_name").getText())
 
-    const headingLabel = createFlyoutHeadingLabel(lf("Functions"),
+    const headingLabel = createFlyoutHeadingLabel(lf("BLOCOS PERSONALIZADOS"),
         pxt.toolbox.getNamespaceColor('functions'),
         pxt.toolbox.getNamespaceIcon('functions'),
         'blocklyFlyoutIconfunctions');

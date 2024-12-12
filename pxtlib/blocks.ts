@@ -353,112 +353,115 @@ namespace pxt.blocks {
         _blockDefinitions = {
             'device_while': {
                 name: Util.lf("a loop that repeats while the condition is true"),
-                tooltip: Util.lf("Run the same sequence of actions while the condition is met."),
+                tooltip: Util.lf("Execute a mesma sequência de ações enquanto a condição for atendida."),
                 url: '/blocks/loops/while',
                 category: 'loops',
                 block: {
-                    message0: Util.lf("while %1"),
-                    appendField: Util.lf("{id:while}do")
+                    message0: Util.lf("enquanto %1"),
+                    appendField: Util.lf("{id:while}faça")
                 }
             },
             'pxt_controls_for': {
                 name: Util.lf("a loop that repeats the number of times you say"),
-                tooltip: Util.lf("Have the variable '{0}' take on the values from 0 to the end number, counting by 1, and do the specified blocks."), // The name of the iteration variable that goes in {0} is replaced in blocklyloader
+                tooltip: Util.lf("Faça com que a variável '{0}' assuma os valores de 0 até o número final, contando por 1, e faça os blocos especificados."), // The name of the iteration variable that goes in {0} is replaced in blocklyloader
                 url: '/blocks/loops/for',
                 category: 'loops',
                 block: {
-                    message0: Util.lf("for %1 from 0 to %2"),
-                    variable: Util.lf("{id:var}index"),
-                    appendField: Util.lf("{id:for}do")
+                    message0: Util.lf("para %1 de 0 a %2"),
+                    variable: Util.lf("{id:var}índice"),
+                    appendField: Util.lf("{id:for}faça")
                 }
             },
             'controls_simple_for': {
                 name: Util.lf("a loop that repeats the number of times you say"),
-                tooltip: Util.lf("Have the variable '{0}' take on the values from 0 to the end number, counting by 1, and do the specified blocks."), // The name of the iteration variable that goes in {0} is replaced in blocklyloader
+                tooltip: Util.lf("Faça com que a variável '{0}' assuma os valores de 0 até o número final, contando por 1, e faça os blocos especificados."), // The name of the iteration variable that goes in {0} is replaced in blocklyloader
                 url: '/blocks/loops/for',
                 category: 'loops',
                 block: {
-                    message0: Util.lf("for %1 from 0 to %2"),
-                    variable: Util.lf("{id:var}index"),
-                    appendField: Util.lf("{id:for}do")
+                    message0: Util.lf("para %1 de 0 a %2"),
+                    variable: Util.lf("{id:var}índice"),
+                    appendField: Util.lf("{id:for}faça")
                 }
             },
             'pxt_controls_for_of': {
                 name: Util.lf("a loop that repeats for each value in an array"),
-                tooltip: Util.lf("Have the variable '{0}' take the value of each item in the array one by one, and do the specified blocks."), // The name of the iteration variable that goes in {0} is replaced in blocklyloader
+                tooltip: Util.lf("Faça com que a variável '{0}' pegue o valor de cada item do array, um por um, e faça os blocos especificados."), // The name of the iteration variable that goes in {0} is replaced in blocklyloader
                 url: '/blocks/loops/for-of',
                 category: 'loops',
                 block: {
-                    message0: Util.lf("for element %1 of %2"),
+                    message0: Util.lf("para elemento %1 de %2"),
                     variable: Util.lf("{id:var}value"),
-                    appendField: Util.lf("{id:for_of}do")
+                    appendField: Util.lf("{id:for_of}fazer")
                 }
             },
             'controls_for_of': {
                 name: Util.lf("a loop that repeats for each value in an array"),
-                tooltip: Util.lf("Have the variable '{0}' take the value of each item in the array one by one, and do the specified blocks."), // The name of the iteration variable that goes in {0} is replaced in blocklyloader
+                tooltip: Util.lf("Faça com que a variável '{0}' pegue o valor de cada item do array, um por um, e faça os blocos especificados."), // The name of the iteration variable that goes in {0} is replaced in blocklyloader
                 url: '/blocks/loops/for-of',
                 category: 'loops',
                 block: {
-                    message0: Util.lf("for element %1 of %2"),
-                    variable: Util.lf("{id:var}value"),
-                    appendField: Util.lf("{id:for_of}do")
+                    message0: Util.lf("para elemento %1 de %2"),
+                    variable: Util.lf("{id:var}valor"),
+                    appendField: Util.lf("{id:for_of}fazer")
                 }
             },
             'math_op2': {
-                name: Util.lf("minimum or maximum of 2 numbers"),
+                name: Util.lf("mínimo ou máximo de 2 números"),
                 tooltip: {
-                    "min": Util.lf("smaller value of 2 numbers"),
-                    "max": Util.lf("larger value of 2 numbers")
+                    "min": Util.lf("valor menor de 2 números"),
+                    "max": Util.lf("valor maior de 2 números")
                 },
                 url: '/blocks/math',
                 operators: {
                     'op': ["min", "max"]
                 },
-                category: 'math'
+                category: 'math',
+                block:{
+                    message0: Util.lf("[%1] de %2 e %3")
+                }
             },
             'math_op3': {
-                name: Util.lf("absolute number"),
-                tooltip: Util.lf("absolute value of a number"),
+                name: Util.lf("número absoluto"),
+                tooltip: Util.lf("valor absoluto de um número"),
                 url: '/reference/math',
                 category: 'math',
                 block: {
-                    message0: Util.lf("absolute of %1")
+                    message0: Util.lf("absoluto de %1")
                 }
             },
             'math_number': {
-                name: Util.lf("{id:block}number"),
+                name: Util.lf("{id:block}número"),
                 url: '/types/number',
                 category: 'math',
                 tooltip: (pxt.appTarget && pxt.appTarget.compile) ?
-                    Util.lf("a decimal number") : Util.lf("an integer number")
+                    Util.lf("um número decimal") : Util.lf("um número inteiro")
             },
             'math_integer': {
-                name: Util.lf("{id:block}number"),
+                name: Util.lf("{id:block}número"),
                 url: '/types/number',
                 category: 'math',
-                tooltip: Util.lf("an integer number")
+                tooltip: Util.lf("um número inteiro")
             },
             'math_whole_number': {
-                name: Util.lf("{id:block}number"),
+                name: Util.lf("{id:block}número"),
                 url: '/types/number',
                 category: 'math',
-                tooltip: Util.lf("a whole number")
+                tooltip: Util.lf("um número inteiro positivo")
             },
             'math_number_minmax': {
-                name: Util.lf("{id:block}number"),
+                name: Util.lf("{id:block}número"),
                 url: '/blocks/math',
                 category: 'math'
             },
             'math_arithmetic': {
-                name: Util.lf("arithmetic operation"),
+                name: Util.lf("operação aritmética"),
                 url: '/blocks/math',
                 tooltip: {
-                    ADD: Util.lf("Return the sum of the two numbers."),
-                    MINUS: Util.lf("Return the difference of the two numbers."),
-                    MULTIPLY: Util.lf("Return the product of the two numbers."),
-                    DIVIDE: Util.lf("Return the quotient of the two numbers."),
-                    POWER: Util.lf("Return the first number raised to the power of the second number."),
+                    ADD: Util.lf("Retorne a soma dos dois números."),
+                    MINUS: Util.lf("Retorne a diferença entre os dois números."),
+                    MULTIPLY: Util.lf("Retorne o produto dos dois números."),
+                    DIVIDE: Util.lf("Retorne o quociente dos dois números."),
+                    POWER: Util.lf("Retorne o primeiro número elevado à potência do segundo número."),
                 },
                 operators: {
                     'OP': ["ADD", "MINUS", "MULTIPLY", "DIVIDE", "POWER"]
@@ -471,88 +474,89 @@ namespace pxt.blocks {
                     MATH_DIVISION_SYMBOL: Util.lf("{id:op}/"),
                     MATH_POWER_SYMBOL: Util.lf("{id:op}**")
                 }
+            }
+            ,
+         'math_modulo': {
+            name: Util.lf("resto da divisão"),
+            tooltip: Util.lf("Retorne o resto da divisão dos dois números."),
+            url: '/blocks/math',
+            category: 'math',
+            block: {
+                MATH_MODULO_TITLE: Util.lf("resto de %1 / %2")
+            }
+        },
+        'math_js_op': {
+            name: Util.lf("função matemática"),
+            tooltip: {
+                "sqrt": Util.lf("Retorna a raiz quadrada do argumento"),
+                "sin": Util.lf("Retorna o seno do argumento"),
+                "cos": Util.lf("Retorna o cosseno do argumento"),
+                "acos": Util.lf("Retorna o arco cosseno do argumento"),
+                "asine": Util.lf("Retorna o arco seno do argumento"),
+                "tan": Util.lf("Retorna a tangente do argumento"),
+                "atan2": Util.lf("Retorna o arco tangente do quociente dos dois argumentos"),
+                "idiv": Util.lf("Retorna a porção inteira da operação de divisão dos dois argumentos"),
+                "imul": Util.lf("Retorna a porção inteira da operação de multiplicação dos dois argumentos")
             },
-            'math_modulo': {
-                name: Util.lf("division remainder"),
-                tooltip: Util.lf("Return the remainder from dividing the two numbers."),
-                url: '/blocks/math',
-                category: 'math',
-                block: {
-                    MATH_MODULO_TITLE: Util.lf("remainder of %1 / %2")
-                }
+            url: '/blocks/math',
+            operators: {
+                'OP': ["sqrt", "sin", "cos", "tan", "atan2", "idiv", "imul"]
             },
-            'math_js_op': {
-                name: Util.lf("math function"),
-                tooltip: {
-                    "sqrt": Util.lf("Returns the square root of the argument"),
-                    "sin": Util.lf("Returns the sine of the argument"),
-                    "cos": Util.lf("Returns the cosine of the argument"),
-                    "acos": Util.lf("Returns the arccosine of the argument"),
-                    "asine": Util.lf("Returns the arcsine of the argument"),
-                    "tan": Util.lf("Returns the tangent of the argument"),
-                    "atan2": Util.lf("Returns the arctangent of the quotient of the two arguments"),
-                    "idiv": Util.lf("Returns the integer portion of the division operation on the two arguments"),
-                    "imul": Util.lf("Returns the integer portion of the multiplication operation on the two arguments")
-                },
-                url: '/blocks/math',
-                operators: {
-                    'OP': ["sqrt", "sin", "cos", "tan", "atan2", "idiv", "imul"]
-                },
-                category: 'math',
-                block: {
-                    "sqrt": Util.lf("{id:op}square root"),
-                    "sin": Util.lf("{id:op}sin"),
-                    "cos": Util.lf("{id:op}cos"),
-                    "asin": Util.lf("{id:op}asin"),
-                    "acos": Util.lf("{id:op}acos"),
-                    "tan": Util.lf("{id:op}tan"),
-                    "atan2": Util.lf("{id:op}atan2"),
-                    "idiv": Util.lf("{id:op}integer /"),
-                    "imul": Util.lf("{id:op}integer ×"),
-                }
+            category: 'math',
+            block: {
+                "sqrt": Util.lf("{id:op}raiz quadrada"),
+                "sin": Util.lf("{id:op}seno"),
+                "cos": Util.lf("{id:op}cosseno"),
+                "asin": Util.lf("{id:op}arco seno"),
+                "acos": Util.lf("{id:op}arco cosseno"),
+                "tan": Util.lf("{id:op}tangente"),
+                "atan2": Util.lf("{id:op}arco tangente"),
+                "idiv": Util.lf("{id:op}divisão inteira /"),
+                "imul": Util.lf("{id:op}multiplicação inteira ×"),
+            }
+        },
+        "math_js_round": {
+            name: Util.lf("funções de arredondamento"),
+            tooltip: {
+                "round": Util.lf("Aumenta o argumento para o próximo número inteiro se sua parte fracionária for maior que um meio"),
+                "ceil": Util.lf("Aumenta o argumento para o próximo número inteiro"),
+                "floor": Util.lf("Diminui o argumento para o próximo número inteiro inferior"),
+                "trunc": Util.lf("Remove a parte fracionária do argumento")
             },
-            "math_js_round": {
-                name: Util.lf("rounding functions"),
-                tooltip: {
-                    "round": Util.lf("Increases the argument to the next higher whole number if its fractional part is more than one half"),
-                    "ceil": Util.lf("Increases the argument to the next higher whole number"),
-                    "floor": Util.lf("Decreases the argument to the next lower whole number"),
-                    "trunc": Util.lf("Removes the fractional part of the argument")
-                },
-                url: '/blocks/math',
-                operators: {
-                    "OP": ["round", "ceil", "floor", "trunc"]
-                },
-                category: 'math',
-                block: {
-                    "round": Util.lf("{id:op}round"),
-                    "ceil": Util.lf("{id:op}ceiling"),
-                    "floor": Util.lf("{id:op}floor"),
-                    "trunc": Util.lf("{id:op}truncate"),
-                }
+            url: '/blocks/math',
+            operators: {
+                "OP": ["round", "ceil", "floor", "trunc"]
             },
+            category: 'math',
+            block: {
+                "round": Util.lf("{id:op}arredondar"),
+                "ceil": Util.lf("{id:op}arredondar para cima"),
+                "floor": Util.lf("{id:op}arredondar para baixo"),
+                "trunc": Util.lf("{id:op}truncar"),
+            }
+        },
             'variables_change': {
                 name: Util.lf("update the value of a number variable"),
-                tooltip: Util.lf("Changes the value of the variable by this amount"),
+                tooltip: Util.lf("Altera o valor da variável por este valor"),
                 url: '/blocks/variables/change',
                 category: 'variables',
                 block: {
-                    message0: Util.lf("change %1 by %2")
+                    message0: Util.lf("mudar %1 por %2")
                 }
             },
             'controls_repeat_ext': {
                 name: Util.lf("a loop that repeats and increments an index"),
-                tooltip: Util.lf("Do some statements several times."),
+                tooltip: Util.lf("Execute algumas instruções várias vezes."),
                 url: '/blocks/loops/repeat',
                 category: 'loops',
                 block: {
-                    CONTROLS_REPEAT_TITLE: Util.lf("repeat %1 times"),
-                    CONTROLS_REPEAT_INPUT_DO: Util.lf("{id:repeat}do")
+                    CONTROLS_REPEAT_TITLE: Util.lf("repete %1 vezes"),
+                    CONTROLS_REPEAT_INPUT_DO: Util.lf("{id:repeat}faça")
                 }
             },
             'variables_get': {
                 name: Util.lf("get the value of a variable"),
-                tooltip: Util.lf("Returns the value of this variable."),
+                tooltip: Util.lf("Retorna o valor desta variável."),
                 url: '/blocks/variables',
                 category: 'variables',
                 block: {
@@ -570,80 +574,81 @@ namespace pxt.blocks {
             },
             'variables_set': {
                 name: Util.lf("assign the value of a variable"),
-                tooltip: Util.lf("Sets this variable to be equal to the input."),
+                tooltip: Util.lf("Define esta variável para ser igual à entrada."),
                 url: '/blocks/variables/assign',
                 category: 'variables',
                 block: {
-                    VARIABLES_SET: Util.lf("set %1 to %2")
+                    VARIABLES_SET: Util.lf("definir %1 para %2")
                 }
             },
             'controls_if': {
                 name: Util.lf("a conditional statement"),
                 tooltip: {
-                    CONTROLS_IF_TOOLTIP_1: Util.lf("If a value is true, then do some statements."),
-                    CONTROLS_IF_TOOLTIP_2: Util.lf("If a value is true, then do the first block of statements. Otherwise, do the second block of statements."),
-                    CONTROLS_IF_TOOLTIP_3: Util.lf("If the first value is true, then do the first block of statements. Otherwise, if the second value is true, do the second block of statements."),
-                    CONTROLS_IF_TOOLTIP_4: Util.lf("If the first value is true, then do the first block of statements. Otherwise, if the second value is true, do the second block of statements. If none of the values are true, do the last block of statements.")
+                    CONTROLS_IF_TOOLTIP_1: Util.lf("Se um valor for verdadeiro, execute algumas instruções."),
+                    CONTROLS_IF_TOOLTIP_2: Util.lf("Se um valor for verdadeiro, execute o primeiro bloco de instruções. Caso contrário, execute o segundo bloco de instruções."),
+                    CONTROLS_IF_TOOLTIP_3: Util.lf("Se o primeiro valor for verdadeiro, execute o primeiro bloco de instruções. Caso contrário, se o segundo valor for verdadeiro, execute o segundo bloco de instruções."),
+                    CONTROLS_IF_TOOLTIP_4: Util.lf("Se o primeiro valor for verdadeiro, execute o primeiro bloco de instruções. Caso contrário, se o segundo valor for verdadeiro, execute o segundo bloco de instruções. Se nenhum dos valores for verdadeiro, execute o último bloco de instruções.")
                 },
                 tooltipSearch: "CONTROLS_IF_TOOLTIP_2",
                 url: '/blocks/logic/if',
                 category: 'logic',
                 block: {
-                    CONTROLS_IF_MSG_IF: Util.lf("{id:logic}if"),
-                    CONTROLS_IF_MSG_THEN: Util.lf("{id:logic}then"),
-                    CONTROLS_IF_MSG_ELSE: Util.lf("{id:logic}else"),
-                    CONTROLS_IF_MSG_ELSEIF: Util.lf("{id:logic}else if")
+                    CONTROLS_IF_MSG_IF: Util.lf("{id:logic}se"),
+                    CONTROLS_IF_MSG_THEN: Util.lf("{id:logic}então"),
+                    CONTROLS_IF_MSG_ELSE: Util.lf("{id:logic}senão"),
+                    CONTROLS_IF_MSG_ELSEIF: Util.lf("{id:logic}senão se")
                 }
             },
-            'lists_create_with': {
-                name: Util.lf("create an array"),
-                tooltip: Util.lf("Creates a new array."),
+          'lists_create_with': {
+                name: Util.lf("criar um array"),
+                tooltip: Util.lf("Cria um novo array."),
                 url: '/reference/arrays/create',
                 category: 'arrays',
                 blockTextSearch: "LISTS_CREATE_WITH_INPUT_WITH",
                 block: {
-                    LISTS_CREATE_EMPTY_TITLE: Util.lf("empty array"),
-                    LISTS_CREATE_WITH_INPUT_WITH: Util.lf("array of"),
+                    LISTS_CREATE_EMPTY_TITLE: Util.lf("array vazio"),
+                    LISTS_CREATE_WITH_INPUT_WITH: Util.lf("array de"),
                     LISTS_CREATE_WITH_CONTAINER_TITLE_ADD: Util.lf("array"),
-                    LISTS_CREATE_WITH_ITEM_TITLE: Util.lf("value")
+                    LISTS_CREATE_WITH_ITEM_TITLE: Util.lf("valor")
                 }
             },
             'lists_length': {
-                name: Util.lf("array length"),
-                tooltip: Util.lf("Returns the number of items in an array."),
+                name: Util.lf("tamanho do array"),
+                tooltip: Util.lf("Retorna o número de itens em um array."),
                 url: '/reference/arrays/length',
                 category: 'arrays',
                 block: {
-                    LISTS_LENGTH_TITLE: Util.lf("length of array %1")
+                    LISTS_LENGTH_TITLE: Util.lf("tamanho do array %1")
                 }
             },
             'lists_index_get': {
-                name: Util.lf("get a value in an array"),
-                tooltip: Util.lf("Returns the value at the given index in an array."),
+                name: Util.lf("obter um valor em um array"),
+                tooltip: Util.lf("Retorna o valor no índice dado em um array."),
                 url: '/reference/arrays/get',
                 category: 'arrays',
                 block: {
-                    message0: Util.lf("%1 get value at %2")
+                    message0: Util.lf("%1 obter valor em %2")
                 }
             },
             'lists_index_set': {
-                name: Util.lf("set a value in an array"),
-                tooltip: Util.lf("Sets the value at the given index in an array"),
+                name: Util.lf("definir um valor em um array"),
+                tooltip: Util.lf("Define o valor no índice dado em um array"),
                 url: '/reference/arrays/set',
                 category: 'arrays',
                 block: {
-                    message0: Util.lf("%1 set value at %2 to %3")
+                    message0: Util.lf("%1 definir valor em %2 para %3")
                 }
             },
+
             'logic_compare': {
                 name: Util.lf("comparing two numbers"),
                 tooltip: {
-                    LOGIC_COMPARE_TOOLTIP_EQ: Util.lf("Return true if both inputs equal each other."),
-                    LOGIC_COMPARE_TOOLTIP_NEQ: Util.lf("Return true if both inputs are not equal to each other."),
-                    LOGIC_COMPARE_TOOLTIP_LT: Util.lf("Return true if the first input is smaller than the second input."),
-                    LOGIC_COMPARE_TOOLTIP_LTE: Util.lf("Return true if the first input is smaller than or equal to the second input."),
-                    LOGIC_COMPARE_TOOLTIP_GT: Util.lf("Return true if the first input is greater than the second input."),
-                    LOGIC_COMPARE_TOOLTIP_GTE: Util.lf("Return true if the first input is greater than or equal to the second input.")
+                    LOGIC_COMPARE_TOOLTIP_EQ: Util.lf("Retorne verdadeiro se ambas as entradas forem iguais."),
+                    LOGIC_COMPARE_TOOLTIP_NEQ: Util.lf("Retorne verdadeiro se ambas as entradas não forem iguais."),
+                    LOGIC_COMPARE_TOOLTIP_LT: Util.lf("Retorne verdadeiro se a primeira entrada for menor que a segunda entrada."),
+                    LOGIC_COMPARE_TOOLTIP_LTE: Util.lf("Retorne verdadeiro se a primeira entrada for menor ou igual à segunda entrada."),
+                    LOGIC_COMPARE_TOOLTIP_GT: Util.lf("Retorne verdadeiro se a primeira entrada for maior que a segunda entrada."),
+                    LOGIC_COMPARE_TOOLTIP_GTE: Util.lf("Retorne verdadeiro se a primeira entrada for maior ou igual à segunda entrada.")
                 },
                 url: '/blocks/logic/boolean',
                 category: 'logic',
@@ -654,118 +659,119 @@ namespace pxt.blocks {
             'logic_operation': {
                 name: Util.lf("boolean operation"),
                 tooltip: {
-                    LOGIC_OPERATION_TOOLTIP_AND: Util.lf("Return true if both inputs are true."),
-                    LOGIC_OPERATION_TOOLTIP_OR: Util.lf("Return true if at least one of the inputs is true.")
+                    LOGIC_OPERATION_TOOLTIP_AND: Util.lf("Retorne verdadeiro se ambas as entradas forem verdadeiras."),
+                    LOGIC_OPERATION_TOOLTIP_OR: Util.lf("Retorne verdadeiro se pelo menos uma das entradas for verdadeira.")
                 },
                 url: '/blocks/logic/boolean',
                 category: 'logic',
                 block: {
-                    LOGIC_OPERATION_AND: Util.lf("{id:op}and"),
-                    LOGIC_OPERATION_OR: Util.lf("{id:op}or")
+                    LOGIC_OPERATION_AND: Util.lf("{id:op}e"),
+                    LOGIC_OPERATION_OR: Util.lf("{id:op}ou")
                 }
             },
             'logic_negate': {
                 name: Util.lf("logical negation"),
-                tooltip: Util.lf("Returns true if the input is false. Returns false if the input is true."),
+                tooltip: Util.lf("Retorne verdadeiro se a entrada for falsa. Retorne falso se a entrada for verdadeira."),
                 url: '/blocks/logic/boolean',
                 category: 'logic',
                 block: {
-                    LOGIC_NEGATE_TITLE: Util.lf("not %1")
+                    LOGIC_NEGATE_TITLE: Util.lf("o oposto de %1")
                 }
             },
             'logic_boolean': {
                 name: Util.lf("a `true` or `false` value"),
-                tooltip: Util.lf("Returns either true or false."),
+                tooltip: Util.lf("Retorna verdadeiro ou falso."),
                 url: '/blocks/logic/boolean',
                 category: 'logic',
                 block: {
-                    LOGIC_BOOLEAN_TRUE: Util.lf("{id:boolean}true"),
-                    LOGIC_BOOLEAN_FALSE: Util.lf("{id:boolean}false")
+                    LOGIC_BOOLEAN_TRUE: Util.lf("{id:boolean}verdadeiro"),
+                    LOGIC_BOOLEAN_FALSE: Util.lf("{id:boolean}falso")
                 }
             },
             'text': {
-                name: Util.lf("a piece of text"),
-                tooltip: Util.lf("A letter, word, or line of text."),
+                name: Util.lf("um pedaço de texto"),
+                tooltip: Util.lf("Uma letra, palavra ou linha de texto."),
                 url: '/types/string',
                 category: 'text',
                 block: {
-                    search: Util.lf("a piece of text") // Only used for search; this string is not surfaced in the block's text
+                    search: Util.lf("um pedaço de texto") // Apenas usado para busca; essa string não aparece no texto do bloco
                 }
             },
             'text_length': {
-                name: Util.lf("number of characters in the string"),
-                tooltip: Util.lf("Returns the number of letters (including spaces) in the provided text."),
+                name: Util.lf("número de caracteres na string"),
+                tooltip: Util.lf("Retorna o número de letras (incluindo espaços) no texto fornecido."),
                 url: '/reference/text/length',
                 category: 'text',
                 block: {
-                    TEXT_LENGTH_TITLE: Util.lf("length of %1")
+                    TEXT_LENGTH_TITLE: Util.lf("comprimento de %1")
                 }
             },
             'text_join': {
-                name: Util.lf("join items to create text"),
-                tooltip: Util.lf("Create a piece of text by joining together any number of items."),
+                name: Util.lf("juntar itens para criar texto"),
+                tooltip: Util.lf("Crie um pedaço de texto juntando qualquer número de itens."),
                 url: '/reference/text/join',
                 category: 'text',
                 block: {
-                    TEXT_JOIN_TITLE_CREATEWITH: Util.lf("join")
+                    TEXT_JOIN_TITLE_CREATEWITH: Util.lf("juntar")
                 }
             },
             'procedures_defnoreturn': {
-                name: Util.lf("define the function"),
-                tooltip: Util.lf("Create a function."),
+                name: Util.lf("definir a função"),
+                tooltip: Util.lf("Crie uma função."),
                 url: '/types/function/define',
                 category: 'functions',
                 block: {
-                    PROCEDURES_DEFNORETURN_TITLE: Util.lf("function"),
-                    PROCEDURE_ALREADY_EXISTS: Util.lf("A function named '%1' already exists.")
+                    PROCEDURES_DEFNORETURN_TITLE: Util.lf("função"),
+                    PROCEDURE_ALREADY_EXISTS: Util.lf("Já existe uma função chamada '%1'.")
                 }
             },
             'procedures_callnoreturn': {
-                name: Util.lf("call the function"),
-                tooltip: Util.lf("Call the user-defined function."),
+                name: Util.lf("chamar a função"),
+                tooltip: Util.lf("Chame a função definida pelo usuário."),
                 url: '/types/function/call',
                 category: 'functions',
                 block: {
-                    PROCEDURES_CALLNORETURN_TITLE: Util.lf("call function")
+                    PROCEDURES_CALLNORETURN_TITLE: Util.lf("chamar função")
                 }
             },
             'function_return': {
-                name: Util.lf("return a value from within a function"),
-                tooltip: Util.lf("Return a value from within a user-defined function."),
+                name: Util.lf("retornar um valor de dentro de uma função"),
+                tooltip: Util.lf("Retorne um valor de dentro de uma função definida pelo usuário."),
                 url: '/types/function/return',
                 category: 'functions',
                 block: {
-                    message_with_value: Util.lf("return %1"),
-                    message_no_value: Util.lf("return")
+                    message_with_value: Util.lf("retornar %1"),
+                    message_no_value: Util.lf("retornar")
                 }
             },
             'function_definition': {
-                name: Util.lf("define the function"),
-                tooltip: Util.lf("Create a function."),
+                name: Util.lf("definir a função"),
+                tooltip: Util.lf("Crie uma função."),
                 url: '/types/function/define',
                 category: 'functions',
                 block: {
-                    FUNCTIONS_EDIT_OPTION: Util.lf("Edit Function")
+                    FUNCTIONS_EDIT_OPTION: Util.lf("Editar Função")
                 }
             },
             'function_call': {
-                name: Util.lf("call the function"),
-                tooltip: Util.lf("Call the user-defined function."),
+                name: Util.lf("chamar a função"),
+                tooltip: Util.lf("Chame a função definida pelo usuário."),
                 url: '/types/function/call',
                 category: 'functions',
                 block: {
-                    FUNCTIONS_CALL_TITLE: Util.lf("call"),
-                    FUNCTIONS_GO_TO_DEFINITION_OPTION: Util.lf("Go to Definition")
+                    FUNCTIONS_CALL_TITLE: Util.lf("chamar"),
+                    FUNCTIONS_GO_TO_DEFINITION_OPTION: Util.lf("Ir para Definição")
                 }
             },
             'function_call_output': {
-                name: Util.lf("call the function with a return value"),
-                tooltip: Util.lf("Call the user-defined function with a return value."),
+                name: Util.lf("chamar a função com um valor de retorno"),
+                tooltip: Util.lf("Chame a função definida pelo usuário com um valor de retorno."),
                 url: '/types/function/call',
                 category: 'functions',
                 block: {
                 }
-            }
+            },
+
         };
         _blockDefinitions[pxtc.ON_START_TYPE] = {
             name: Util.lf("on start event"),
@@ -787,20 +793,20 @@ namespace pxt.blocks {
         };
         _blockDefinitions[pxtc.TS_BREAK_TYPE] = {
             name: Util.lf("break"),
-            tooltip: Util.lf("Break out of the current loop or switch"),
+            tooltip: Util.lf("Parar o programa atual ou alternar"),
             url: '/blocks/loops/break',
             category: 'loops',
             block: {
-                message0: Util.lf("break")
+                message0: Util.lf("parar")
             }
         }
         _blockDefinitions[pxtc.TS_CONTINUE_TYPE] = {
             name: Util.lf("continue"),
-            tooltip: Util.lf("Skip current iteration and continues with the next iteration in the loop"),
+            tooltip: Util.lf("Pula a iteração atual e continua com a próxima iteração no loop."),
             url: '/blocks/loops/continue',
             category: 'loops',
             block: {
-                message0: Util.lf("continue")
+                message0: Util.lf("continuar")
             }
         }
 

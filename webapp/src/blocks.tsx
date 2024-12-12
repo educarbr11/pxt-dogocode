@@ -1384,7 +1384,7 @@ export class Editor extends toolboxeditor.ToolboxEditor {
 
             if (advanced) {
                 // More subcategory
-                setSubcategory(ns, lf("more"));
+                setSubcategory(ns, lf("mais"));
             } else if (subcat) {
                 setSubcategory(ns, subcat);
             }

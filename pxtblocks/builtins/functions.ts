@@ -15,15 +15,15 @@ export function initFunctions() {
     const msg = Blockly.Msg;
 
     // New functions implementation messages
-    msg.FUNCTION_CREATE_NEW = lf("Make a Function...");
-    msg.FUNCTION_WARNING_DUPLICATE_ARG = lf("Functions cannot use the same argument name more than once.");
-    msg.FUNCTION_WARNING_ARG_NAME_IS_FUNCTION_NAME = lf("Argument names must not be the same as the function name.");
-    msg.FUNCTION_WARNING_EMPTY_NAME = lf("Function and argument names cannot be empty.");
-    msg.FUNCTIONS_DEFAULT_FUNCTION_NAME = lf("doSomething");
-    msg.FUNCTIONS_DEFAULT_BOOLEAN_ARG_NAME = lf("bool");
-    msg.FUNCTIONS_DEFAULT_STRING_ARG_NAME = lf("text");
-    msg.FUNCTIONS_DEFAULT_NUMBER_ARG_NAME = lf("num");
-    msg.FUNCTIONS_DEFAULT_CUSTOM_ARG_NAME = lf("arg");
+    msg.FUNCTION_CREATE_NEW = lf("Criar um bloco...");
+    msg.FUNCTION_WARNING_DUPLICATE_ARG = lf("As funções não podem usar o mesmo nome de argumento mais de uma vez.");
+    msg.FUNCTION_WARNING_ARG_NAME_IS_FUNCTION_NAME = lf("Os nomes dos argumentos não devem ser iguais ao nome da função.");
+    msg.FUNCTION_WARNING_EMPTY_NAME = lf("Os nomes das funções e dos argumentos não podem estar vazios.");    
+    msg.FUNCTIONS_DEFAULT_FUNCTION_NAME = lf("façaAlgo");
+    msg.FUNCTIONS_DEFAULT_BOOLEAN_ARG_NAME = lf("booleano");
+    msg.FUNCTIONS_DEFAULT_STRING_ARG_NAME = lf("texto");
+    msg.FUNCTIONS_DEFAULT_NUMBER_ARG_NAME = lf("número");
+    msg.FUNCTIONS_DEFAULT_CUSTOM_ARG_NAME = lf("argumento");
     msg.PROCEDURES_HUE = pxt.toolbox.getNamespaceColor("functions");
     msg.REPORTERS_HUE = pxt.toolbox.getNamespaceColor("variables");
 
@@ -249,8 +249,8 @@ export function initFunctions() {
             xmlList.push(headingLabel);
         }
 
-        const newFunction = lf("Make a Function...");
-        const newFunctionTitle = lf("New function name:");
+        const newFunction = lf("Cria um bloco...");
+        const newFunctionTitle = lf("Novo nome do bloco:");
 
         // Add the "Make a function" button
         let button = Blockly.utils.xml.createElement('button');
