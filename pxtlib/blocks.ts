@@ -390,8 +390,8 @@ namespace pxt.blocks {
                 category: 'loops',
                 block: {
                     message0: Util.lf("para elemento %1 de %2"),
-                    variable: Util.lf("{id:var}value"),
-                    appendField: Util.lf("{id:for_of}fazer")
+                    variable: Util.lf("{id:var}valor"),
+                    appendField: Util.lf("{id:for_of}faça")
                 }
             },
             'controls_for_of': {
@@ -402,7 +402,7 @@ namespace pxt.blocks {
                 block: {
                     message0: Util.lf("para elemento %1 de %2"),
                     variable: Util.lf("{id:var}valor"),
-                    appendField: Util.lf("{id:for_of}fazer")
+                    appendField: Util.lf("{id:for_of}faça")
                 }
             },
             'math_op2': {
@@ -482,7 +482,7 @@ namespace pxt.blocks {
             url: '/blocks/math',
             category: 'math',
             block: {
-                MATH_MODULO_TITLE: Util.lf("resto de %1 / %2")
+                MATH_MODULO_TITLE: Util.lf("resto da divisão de %1 / %2")
             }
         },
         'math_js_op': {
@@ -532,7 +532,7 @@ namespace pxt.blocks {
                 "round": Util.lf("{id:op}arredondar"),
                 "ceil": Util.lf("{id:op}arredondar para cima"),
                 "floor": Util.lf("{id:op}arredondar para baixo"),
-                "trunc": Util.lf("{id:op}truncar"),
+                "trunc": Util.lf("{id:op}remover a parte decimal"),
             }
         },
             'variables_change': {
@@ -600,30 +600,30 @@ namespace pxt.blocks {
                 }
             },
           'lists_create_with': {
-                name: Util.lf("criar um array"),
-                tooltip: Util.lf("Cria um novo array."),
+                name: Util.lf("criar uma lista"),
+                tooltip: Util.lf("Cria uma nova lista."),
                 url: '/reference/arrays/create',
                 category: 'arrays',
                 blockTextSearch: "LISTS_CREATE_WITH_INPUT_WITH",
                 block: {
-                    LISTS_CREATE_EMPTY_TITLE: Util.lf("array vazio"),
-                    LISTS_CREATE_WITH_INPUT_WITH: Util.lf("array de"),
-                    LISTS_CREATE_WITH_CONTAINER_TITLE_ADD: Util.lf("array"),
+                    LISTS_CREATE_EMPTY_TITLE: Util.lf("lista vazia"),
+                    LISTS_CREATE_WITH_INPUT_WITH: Util.lf("lista de"),
+                    LISTS_CREATE_WITH_CONTAINER_TITLE_ADD: Util.lf("lista"),
                     LISTS_CREATE_WITH_ITEM_TITLE: Util.lf("valor")
                 }
             },
             'lists_length': {
-                name: Util.lf("tamanho do array"),
-                tooltip: Util.lf("Retorna o número de itens em um array."),
+                name: Util.lf("tamanho da lista"),
+                tooltip: Util.lf("Retorna o número de itens em uma lista."),
                 url: '/reference/arrays/length',
                 category: 'arrays',
                 block: {
-                    LISTS_LENGTH_TITLE: Util.lf("tamanho do array %1")
+                    LISTS_LENGTH_TITLE: Util.lf("tamanho da lista %1")
                 }
             },
             'lists_index_get': {
-                name: Util.lf("obter um valor em um array"),
-                tooltip: Util.lf("Retorna o valor no índice dado em um array."),
+                name: Util.lf("obter um valor em uma lista"),
+                tooltip: Util.lf("Retorna o valor no índice dado em uma lista."),
                 url: '/reference/arrays/get',
                 category: 'arrays',
                 block: {
@@ -631,10 +631,10 @@ namespace pxt.blocks {
                 }
             },
             'lists_index_set': {
-                name: Util.lf("definir um valor em um array"),
-                tooltip: Util.lf("Define o valor no índice dado em um array"),
+                name: Util.lf("definir um valor em uma lista"),
+                tooltip: Util.lf("Define o valor no índice dado em uma lista"),
                 url: '/reference/arrays/set',
-                category: 'arrays',
+                category: 'arrays', 
                 block: {
                     message0: Util.lf("%1 definir valor em %2 para %3")
                 }

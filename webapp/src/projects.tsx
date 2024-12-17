@@ -966,7 +966,7 @@ export class ProjectsDetail extends data.Component<ProjectsDetailProps, Projects
             case "js":
                 return "JavaScript";
             case "blocks":
-                return lf("Blocks");
+                return lf("Blocos");
             default:
                 return null;
         }

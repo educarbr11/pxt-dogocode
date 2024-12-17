@@ -297,6 +297,14 @@ namespace helpers {
         return out;
     }
 
+    /**
+     * Return a random value from the array
+     */
+    //% help=arrays/pick-random
+    //% helper=arrayPickRandom weight=25
+    //% blockId="array_pickRandom" block="valor aleatorio de %list"
+    //% blockNamespace="arrays"
+    //% group="Read"
     export function arrayPickRandom<T>(arr: T[]): T {
         return arr[Math.randomRange(0, arr.length - 1)];
     }
