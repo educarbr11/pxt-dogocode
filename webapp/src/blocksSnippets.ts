@@ -14,7 +14,7 @@ function cachedBuiltinCategories(): pxt.Map<BuiltinCategoryDefinition> {
     if (!_cachedBuiltinCategories) {
         _cachedBuiltinCategories = {};
         _cachedBuiltinCategories[CategoryNameID.Loops] = {
-            name: lf("{id:category}Loops"),
+            name: lf("{id:category}LAÇOS DE REPETIÇÃO"),
             nameid: CategoryNameID.Loops,
             blocks: [
                 {
@@ -119,16 +119,16 @@ function cachedBuiltinCategories(): pxt.Map<BuiltinCategoryDefinition> {
             });
         }
         _cachedBuiltinCategories[CategoryNameID.Logic] = {
-            name: lf("{id:category}Logic"),
+            name: lf("{id:category}LÓGICA"),
             nameid: CategoryNameID.Logic,
-            groups: [lf("Conditionals"), lf("Comparison"), lf("Boolean"), "other"],
+            groups: [lf("Condicionais"), lf("Comparação"), lf("Booleano"), "outro"],
             blocks: [
                 {
                     name: "controls_if",
                     snippetName: "if",
                     attributes: {
                         blockId: "controls_if",
-                        group: lf("Conditionals"),
+                        group: lf("Condicionais"),
                         weight: 49
                     },
                     blockXml: `<block type="controls_if" gap="8">
@@ -143,7 +143,7 @@ function cachedBuiltinCategories(): pxt.Map<BuiltinCategoryDefinition> {
                     snippetName: "if else",
                     attributes: {
                         blockId: "controls_if",
-                        group: lf("Conditionals"),
+                        group: lf("Condicionais"),
                         weight: 48
                     },
                     blockXml: `<block type="controls_if" gap="8">
@@ -159,7 +159,7 @@ function cachedBuiltinCategories(): pxt.Map<BuiltinCategoryDefinition> {
                     snippetName: "equals",
                     attributes: {
                         blockId: "logic_compare",
-                        group: lf("Comparison"),
+                        group: lf("Comparação"),
                         weight: 47
                     },
                     blockXml: `<block type="logic_compare" gap="8">
@@ -179,7 +179,7 @@ function cachedBuiltinCategories(): pxt.Map<BuiltinCategoryDefinition> {
                     snippetName: "less than | greater than",
                     attributes: {
                         blockId: "logic_compare",
-                        group: lf("Comparison"),
+                        group: lf("Comparação"),
                         weight: 46
                     },
                     blockXml: `<block type="logic_compare">
@@ -200,7 +200,7 @@ function cachedBuiltinCategories(): pxt.Map<BuiltinCategoryDefinition> {
                     snippetName: "equals",
                     attributes: {
                         blockId: "logic_compare",
-                        group: lf("Comparison"),
+                        group: lf("Comparação"),
                         weight: 45
                     },
                     blockXml: `<block type="logic_compare" gap="8">
@@ -220,7 +220,7 @@ function cachedBuiltinCategories(): pxt.Map<BuiltinCategoryDefinition> {
                     snippetName: "and",
                     attributes: {
                         blockId: "logic_operation",
-                        group: lf("Boolean"),
+                        group: lf("Booleano"),
                         weight: 44
                     },
                     blockXml: `<block type="logic_operation" gap="8">
@@ -231,7 +231,7 @@ function cachedBuiltinCategories(): pxt.Map<BuiltinCategoryDefinition> {
                     snippetName: "or",
                     attributes: {
                         blockId: "logic_operation",
-                        group: lf("Boolean"),
+                        group: lf("Booleano"),
                         weight: 43
                     },
                     blockXml: `<block type="logic_operation" gap="8">
@@ -242,7 +242,7 @@ function cachedBuiltinCategories(): pxt.Map<BuiltinCategoryDefinition> {
                     snippetName: "not",
                     attributes: {
                         blockId: "logic_negate",
-                        group: lf("Boolean"),
+                        group: lf("Booleano"),
                         weight: 42
                     },
                     blockXml: `<block type="logic_negate"></block>`
@@ -251,7 +251,7 @@ function cachedBuiltinCategories(): pxt.Map<BuiltinCategoryDefinition> {
                     snippetName: "true",
                     attributes: {
                         blockId: "logic_boolean",
-                        group: lf("Boolean"),
+                        group: lf("Booleano"),
                         weight: 41
                     },
                     blockXml: `<block type="logic_boolean" gap="8">
@@ -262,7 +262,7 @@ function cachedBuiltinCategories(): pxt.Map<BuiltinCategoryDefinition> {
                     snippetName: "false",
                     attributes: {
                         blockId: "logic_boolean",
-                        group: lf("Boolean"),
+                        group: lf("Booleano"),
                         weight: 40
                     },
                     blockXml: `<block type="logic_boolean">
@@ -277,7 +277,7 @@ function cachedBuiltinCategories(): pxt.Map<BuiltinCategoryDefinition> {
             }
         };
         _cachedBuiltinCategories[CategoryNameID.Variables] = {
-            name: lf("{id:category}Variables"),
+            name: lf("{id:category}VARIÁVEIS"),
             nameid: CategoryNameID.Variables,
             blocks: undefined,
             custom: true,
@@ -293,7 +293,7 @@ function cachedBuiltinCategories(): pxt.Map<BuiltinCategoryDefinition> {
             }
         };
         _cachedBuiltinCategories[CategoryNameID.Maths] = {
-            name: lf("{id:category}Math"),
+            name: lf("{id:category}MATEMÁTICA"),
             nameid: CategoryNameID.Maths,
             blocks: [
                 {
@@ -499,7 +499,7 @@ function cachedBuiltinCategories(): pxt.Map<BuiltinCategoryDefinition> {
             }
         };
         _cachedBuiltinCategories[CategoryNameID.Functions] = {
-            name: lf("{id:category}Functions"),
+            name: lf("{id:category}CRIAR NOVO BLOCO"),
             nameid: CategoryNameID.Functions,
             blocks: [],
             custom: true,
@@ -516,7 +516,7 @@ function cachedBuiltinCategories(): pxt.Map<BuiltinCategoryDefinition> {
             }
         };
         _cachedBuiltinCategories[CategoryNameID.Arrays] = {
-            name: lf("{id:category}Arrays"),
+            name: lf("{id:category}LISTA"),
             nameid: CategoryNameID.Arrays,
             blocks: [
                 {
@@ -524,7 +524,7 @@ function cachedBuiltinCategories(): pxt.Map<BuiltinCategoryDefinition> {
                     snippetName: "create array",
                     attributes: {
                         blockId: "lists_create_with",
-                        group: "Create",
+                        group: "CRIAR",
                         weight: 90
                     },
                     blockXml: `<block type="variables_set" gap="8">
@@ -550,7 +550,7 @@ function cachedBuiltinCategories(): pxt.Map<BuiltinCategoryDefinition> {
                     snippetName: "create array",
                     attributes: {
                         blockId: "lists_create_with",
-                        group: "Create",
+                        group: "CRIAR",
                         weight: 89
                     },
                     blockXml: `<block type="variables_set">
@@ -581,7 +581,7 @@ function cachedBuiltinCategories(): pxt.Map<BuiltinCategoryDefinition> {
                     snippetName: "create array",
                     attributes: {
                         blockId: "lists_create_with",
-                        group: "Create",
+                        group: "CRIAR",
                         weight: 5
                     },
                     blockXml: `<block type="lists_create_with">
@@ -593,7 +593,7 @@ function cachedBuiltinCategories(): pxt.Map<BuiltinCategoryDefinition> {
                     snippetName: "array get value",
                     attributes: {
                         blockId: "lists_index_get",
-                        group: "Read",
+                        group: "LER",
                         weight: 87
                     },
                     blockXml: `<block type="lists_index_get">
@@ -614,7 +614,7 @@ function cachedBuiltinCategories(): pxt.Map<BuiltinCategoryDefinition> {
                     snippetName: "array set value",
                     attributes: {
                         blockId: "lists_index_set",
-                        group: "Modify",
+                        group: "ATUALIZAR",
                         weight: 86
                     },
                     blockXml: `<block type="lists_index_set">
@@ -635,7 +635,7 @@ function cachedBuiltinCategories(): pxt.Map<BuiltinCategoryDefinition> {
                     snippetName: "length",
                     attributes: {
                         blockId: "lists_length",
-                        group: "Read",
+                        group: "LER",
                         weight: 88
                     },
                     blockXml: `<block type="lists_length">
@@ -651,13 +651,13 @@ function cachedBuiltinCategories(): pxt.Map<BuiltinCategoryDefinition> {
                 advanced: true,
                 weight: 50.07,
                 icon: "arrays",
-                groups: ["Create", "Read", "Modify", "Operations"],
+                groups: ["CRIAR", "LER", "ATUALIZAR", "OPERAÇÕES"],
                 callingConvention: ts.pxtc.ir.CallingConvention.Plain,
                 paramDefl: {}
             }
         };
         _cachedBuiltinCategories[CategoryNameID.Text] = {
-            name: lf("{id:category}Text"),
+            name: lf("{id:category}TEXTO"),
             nameid: CategoryNameID.Text,
             blocks: [
                 {

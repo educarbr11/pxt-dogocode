@@ -442,7 +442,7 @@ export function webUsbPairLegacyDialogAsync(pairAsync: () => Promise<boolean>, c
 
         const confirmOptions = () => {
             return {
-                header: lf("Connect to your {0}…", boardName),
+                header: lf("Conectar ao seu {0}…", boardName),
                 jsxd,
                 hasCloseIcon: true,
                 hideAgree: true,
@@ -450,11 +450,11 @@ export function webUsbPairLegacyDialogAsync(pairAsync: () => Promise<boolean>, c
                 className: 'downloaddialog',
                 buttons: [
                     {
-                        label: lf("Connect device"),
+                        label: lf("Conectar dispositivo"),
                         icon: "usb",
                         className: "primary",
                         onclick: () => {
-                            core.showLoading("pair", lf("Select your {0} and press \"Connect\".", boardName))
+                            core.showLoading("pair", lf("Selecionar seu {0} e pressionar \"Conectar\".", boardName))
                             pairAsync()
                                 .finally(() => {
                                     core.hideLoading("pair")
@@ -472,7 +472,7 @@ export function webUsbPairLegacyDialogAsync(pairAsync: () => Promise<boolean>, c
                                 })
                                 .catch(e => {
                                     pxt.reportException(e)
-                                    core.errorNotification(lf("Pairing error: {0}", e.message));
+                                    core.errorNotification(lf("Erro de pareamento: {0}", e.message));
                                     resolve(0);
                                 });
                         }
@@ -494,20 +494,20 @@ function theme() {
 
 export function renderUnpairDialog() {
     const boardName = getBoardName();
-    const header = lf("How to unpair your {0}", boardName);
+    const header = lf("Como desconectar do seu dispositivo {0}", boardName);
     const unpairImg = theme().browserUnpairImage;
     const jsx = <div>
         <p>
-            {lf("You can unpair your {0} if the WebUSB download is malfunctioning.", boardName)}
-        </p>
-        <p>
-            {lf("Click on the icon on the left side of the address bar and uncheck your device.")}
-        </p>
-        {unpairImg && <img
-            className="ui image centered medium"
-            src={unpairImg}
-            alt={lf("A gif showing how to unpair the {0}", boardName)}
-        />}
+        {lf("Você pode desparear seu {0} se o download WebUSB estiver com problemas.", boardName)}
+    </p>
+    <p>
+        {lf("Clique no ícone no lado esquerdo da barra de endereços e desmarque seu dispositivo.")}
+    </p>
+    {unpairImg && <img
+        className="ui image centered medium"
+        src={unpairImg}
+        alt={lf("Um gif mostrando como desparear o {0}", boardName)}
+    />}
     </div>
 
     const helpUrl = pxt.appTarget.appTheme.usbDocs
@@ -520,17 +520,17 @@ export function renderDisconnectDeviceDialog() {
     const disconnectImage = theme().disconnectDeviceImage;
 
     return <>
-        {disconnectImage && <img
-            className="ui image centered medium"
-            src={disconnectImage}
-            alt={lf("Image of {0} being disconnected", boardName)}
-        />}
-        <div>
-            {lf("Your {0} appears to have stalled", boardName)}
-            <br />
-            <br />
-            {lf("Please disconnect any battery and usb connection, and try again.")}
-        </div>
+       {disconnectImage && <img
+        className="ui image centered medium"
+        src={disconnectImage}
+        alt={lf("Imagem do {0} sendo desconectado", boardName)}
+    />}
+    <div>
+        {lf("Seu {0} parece ter travado", boardName)}
+        <br />
+        <br />
+        {lf("Por favor, desconecte qualquer bateria e conexão USB, e tente novamente.")}
+    </div>
     </>;
 }
 
@@ -545,10 +545,10 @@ export async function showDeviceForgottenDialog(confirmAsync: ConfirmAsync) {
                 <div className="ui">
                     <div className="content">
                         <div className="description">
-                            {lf("Your {0} has been disconnected.", boardName)}
-                            <br />
-                            <br />
-                            {lf("Unplug it from your computer and disconnect any battery to fully reset it.")}
+                        {lf("Seu {0} foi desconectado.", boardName)}
+                        <br />
+                        <br />
+                        {lf("Desconecte-o do seu computador e retire qualquer bateria para resetá-lo completamente.")}
                         </div>
                     </div>
                 </div>

@@ -1088,7 +1088,7 @@ export class ToolboxSearch extends data.Component<ToolboxSearchProps, ToolboxSea
                     <input
                         ref="searchInput"
                         type="text"
-                        placeholder={lf("Search...")}
+                        placeholder={lf("Pesquisar...")}
                         onFocus={this.searchImmediate}
                         onKeyDown={this.handleKeyDown}
                         onChange={this.handleChange}

@@ -41,8 +41,8 @@ export class HeaderBarImpl extends React.Component<HeaderBarProps> {
             const highContrast = this.props.preferences?.highContrast;
             items.push({
                 id: "highcontrast",
-                title: highContrast ? lf("High Contrast Off") : lf("High Contrast On"),
-                label: highContrast ? lf("High Contrast Off") : lf("High Contrast On"),
+                title: highContrast ? lf("Alto contraste desligado") : lf("Alto contraste ligado"),
+                label: highContrast ? lf("Alto contraste desligado") : lf("Alto contraste ligado"),
                 onClick: () => {
                     const newHighContrastPref = !this.props.preferences.highContrast;
                     tickEvent("skillmap.highcontrast", { on: newHighContrastPref ? 1 : 0});

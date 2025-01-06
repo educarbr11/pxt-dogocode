@@ -81,40 +81,40 @@ export class GithubProvider extends cloudsync.ProviderBase {
             core.forceUpdate();
         }
         return core.confirmAsync({
-            header: lf("Sign in with GitHub"),
+            header: lf("Faça login com GitHub"),
             hasCloseIcon: true,
             helpUrl: "/github",
-            agreeLbl: lf("Sign in"),
+            agreeLbl: lf("Login"),
             onLoaded: (el) => {
                 form = el;
             },
             jsxd: () => <div className="ui form">
-                <p>{lf("You need to sign in with GitHub to use this feature.")}</p>
-                <p>{lf("You can host your code on GitHub and collaborate with friends on projects.")}</p>
-                <div><sui.PlainCheckbox label={lf("Remember me")} onChange={handleRememberMe} /></div>
+                <p>{lf("Você precisa fazer login no GitHub para usar este recurso.")}</p>
+                <p>{lf("Você precisa fazer login no GitHub para usar este recurso. Você pode hospedar seu código no GitHub e colaborar com amigos em projects.ature.")}</p>
+                <div><sui.PlainCheckbox label={lf("Me lembrar")} onChange={handleRememberMe} /></div>
                 {!useToken && <p className="ui small">
-                    {lf("Looking to use a Developer token instead?")}
-                    <sui.Link className="link" text={lf("Use Developer token")} onClick={showToken} href="#" />
+                    {lf("Quer usar um token de desenvolvedor?")}
+                    <sui.Link className="link" text={lf("Usar token de desenvolvedor")} onClick={showToken} href="#" />
                 </p>}
                 {useToken && <ol>
                     <li>
                         {lf("Navigate to: ")}
                         <a href="https://github.com/settings/tokens/new" target="_blank" rel="noopener noreferrer">
-                            {lf("GitHub token generation page")}
+                            {lf("Página de geração de token do GitHub")}
                         </a>
                     </li>
                     <li>
-                        {lf("Put something like 'MakeCode {0}' in description", pxt.appTarget.name)}
+                        {lf("Coloque algo como 'MakeCode {0}' na descrição", pxt.appTarget.name)}
                     </li>
                     <li>
-                        {lf("Select either '{0}' or '{1}' scope, depending which repos you want to edit from here", "repo", "public_repo")}
+                        {lf("Selecione o escopo '{0}' ou '{1}', dependendo de quais repositórios você deseja editar aqui", "repo", "public_repo")}
                     </li>
                     <li>
-                        {lf("Click generate token, copy it, and paste it below.")}
+                        {lf("Clique em gerar token, copie-o e cole-o abaixo.")}
                     </li>
                 </ol>}
                 {useToken && <div className="ui field">
-                    <label id="selectUrlToOpenLabel">{lf("Paste GitHub token here:")}</label>
+                    <label id="selectUrlToOpenLabel">{lf("Cole o token do GitHub aqui:")}</label>
                     <input id="githubTokenInput" type="url" tabIndex={0} autoFocus aria-labelledby="selectUrlToOpenLabel" placeholder="ghp_ABC..." className="ui blue fluid"></input>
                 </div>}
             </div>,
@@ -145,7 +145,7 @@ export class GithubProvider extends cloudsync.ProviderBase {
     }
 
     private oauthRedirectAsync(rememberMe: boolean, route: string, consent?: boolean): Promise<void> {
-        core.showLoading("ghlogin", lf("Signing you into GitHub..."))
+        core.showLoading("ghlogin", lf("Fazendo login no GitHub..."))
         route = (route || "").replace(/^#/, "");
         const state = cloudsync.setOauth(this.name, rememberMe, route ? `#github:${route}` : undefined);
         const self = window.location.href.replace(/#.*/, "")

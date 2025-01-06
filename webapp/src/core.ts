@@ -257,7 +257,7 @@ export function confirmAsync(options: ConfirmOptions): Promise<number> {
 
     if (!options.hideAgree) {
         options.buttons.push({
-            label: options.agreeLbl || lf("Go ahead!"),
+            label: options.agreeLbl || lf("Vá em frente!"),
             className: options.agreeClass,
             icon: options.agreeIcon || "checkmark",
             approveButton: true,
@@ -285,10 +285,10 @@ export function confirmAsync(options: ConfirmOptions): Promise<number> {
 export function confirmDelete(what: string, cb: () => Promise<void>, multiDelete?: boolean) {
     confirmAsync({
         header: multiDelete ?
-            lf("Would you like to delete {0} projects?", what) :
-            lf("Would you like to delete '{0}'?", what),
-        body: lf("It will be deleted for good. No undo."),
-        agreeLbl: lf("Delete"),
+            lf("Você gostaria de excluir {0} projetos?", what) :
+            lf("Você gostaria de excluir '{0}'?", what),
+        body: lf("Ele será excluído para sempre. Não é possivel desfazer essa ação."),
+        agreeLbl: lf("Deletar"),
         agreeClass: "red",
         agreeIcon: "trash",
     }).then(res => {
@@ -309,7 +309,7 @@ export function promptAsync(options: PromptOptions): Promise<string> {
 
     if (!options.hideAgree) {
         options.buttons.push({
-            label: options.agreeLbl || lf("Go ahead!"),
+            label: options.agreeLbl || lf("Vá em frente!"),
             className: options.agreeClass,
             icon: options.agreeIcon || "checkmark",
             approveButton: true,

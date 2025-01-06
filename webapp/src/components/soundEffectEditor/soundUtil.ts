@@ -72,7 +72,7 @@ export function getCODALGallerySounds(): SoundGalleryItem[] {
             }
         },
         {
-            name: pxt.U.lf("Radio"),
+            name: pxt.U.lf("Rádio"),
             sound: {
                 interpolation: "linear",
                 effect: "none",
@@ -85,7 +85,7 @@ export function getCODALGallerySounds(): SoundGalleryItem[] {
             }
         },
         {
-            name: pxt.U.lf("Jump"),
+            name: pxt.U.lf("Pular"),
             sound: {
                 interpolation: "linear",
                 effect: "warble",
@@ -98,7 +98,7 @@ export function getCODALGallerySounds(): SoundGalleryItem[] {
             }
         },
         {
-            name: pxt.U.lf("Water Drop"),
+            name: pxt.U.lf("Gota d'água"),
             sound: {
                 interpolation: "linear",
                 effect: "none",
@@ -111,7 +111,7 @@ export function getCODALGallerySounds(): SoundGalleryItem[] {
             }
         },
         {
-            name: pxt.U.lf("Kick Drum"),
+            name: pxt.U.lf("Bumbo"),
             sound: {
                 interpolation: "curve",
                 effect: "none",
@@ -137,7 +137,7 @@ export function getCODALGallerySounds(): SoundGalleryItem[] {
             }
         },
         {
-            name: pxt.U.lf("Snare"),
+            name: pxt.U.lf("Caixa"),
             sound: {
                 interpolation: "logarithmic",
                 effect: "warble",
@@ -150,7 +150,7 @@ export function getCODALGallerySounds(): SoundGalleryItem[] {
             }
         },
         {
-            name: pxt.U.lf("Hi-Hat"),
+            name: pxt.U.lf("Chimbal"),
             sound: {
                 interpolation: "linear",
                 effect: "none",
@@ -163,7 +163,7 @@ export function getCODALGallerySounds(): SoundGalleryItem[] {
             }
         },
         {
-            name: pxt.U.lf("Cowbell"),
+            name: pxt.U.lf("Campainha"),
             sound: {
                 interpolation: "linear",
                 effect: "vibrato",
@@ -176,7 +176,7 @@ export function getCODALGallerySounds(): SoundGalleryItem[] {
             }
         },
         {
-            name: pxt.U.lf("Triangle"),
+            name: pxt.U.lf("Triângulo"),
             sound: {
                 interpolation: "linear",
                 effect: "none",

@@ -1126,7 +1126,7 @@ namespace ts.pxtc.Util {
             pxt.debug(`downloading translations for ${lang} ${filename}`);
             let host = pxt.BrowserUtils.isLocalHost() || pxt.webConfig.isStatic ? "https://makecode.com/api/" : ""
             // https://pxt.io/api/translations?filename=strings.json&lang=pl&approved=true
-            let url = `${host}translations?lang=${encodeURIComponent(lang)}&filename=${encodeURIComponent(filename)}&approved=true`;
+            let url = `${host}translations?lang=${encodeURIComponent(lang)}&filename=${encodeURIComponent(filename)}&approved=false`;
             const headers: pxt.Map<string> = {};
             if (etag && !pxt.Cloud.useCdnApi()) headers["If-None-Match"] = etag;
             return (host ? requestAsync : pxt.Cloud.apiRequestWithCdnAsync)({ url, headers }).then(resp => {

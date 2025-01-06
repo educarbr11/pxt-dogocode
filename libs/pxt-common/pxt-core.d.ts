@@ -9,13 +9,13 @@ interface Array<T> {
     length: number;
 
     /**
-      * Append a new element to an array.
-      * @param items New elements of the Array.
+      * Adiciona um novo elemento a um array.
+      * @param items Novos elementos do Array.
       */
     //% help=arrays/push
     //% shim=Array_::push weight=50
-    //% blockId="array_push" block="%list| add value %value| to end" blockNamespace="arrays"
-    //% group="Modify"
+    //% blockId="array_push" block="%list(lista)| adicionar valor %value| no final" blockNamespace="arrays"
+    //% group="ATUALIZAR"
     push(item: T): void;
 
     /**
@@ -26,40 +26,41 @@ interface Array<T> {
     concat(arr: T[]): T[];
 
     /**
-      * Remove the last element from an array and return it.
+      * Remova o último elemento de um array e retorne-o.
       */
     //% help=arrays/pop
     //% shim=Array_::pop weight=45
-    //% blockId="array_pop" block="get and remove last value from %list" blockNamespace="arrays"
-    //% group="Read"
+    //% blockId="array_pop" block="pegar e remover o último valor de %list(lista)" blockNamespace="arrays"
+    //% group="LER"
     pop(): T;
 
     /**
-      * Reverse the elements in an array. The first array element becomes the last, and the last array element becomes the first.
+      * Inverte os elementos de um array. O primeiro elemento do array se torna o último, e o último elemento do array se torna o primeiro.
       */
     //% help=arrays/reverse
     //% helper=arrayReverse weight=10
-    //% blockId="array_reverse" block="reverse %list" blockNamespace="arrays"
-    //% group="Operations"
+    //% blockId="array_reverse" block="inverter %list(lista)" blockNamespace="arrays"
+    //% group="OPERAÇÕES"
     reverse(): void;
 
     /**
-      * Remove the first element from an array and return it. This method changes the length of the array.
+      * Remove o primeiro elemento de um array e o retorna. Este método altera o tamanho do array.
       */
     //% help=arrays/shift
     //% helper=arrayShift weight=30
-    //% blockId="array_shift" block="get and remove first value from %list" blockNamespace="arrays"
-    //% group="Read"
+    //% blockId="array_shift" block="obter e remover o primeiro valor de %list(lista)" blockNamespace="arrays"
+    //% group="LER"
     shift(): T;
 
+   
     /**
-      * Add one element to the beginning of an array and return the new length of the array.
-      * @param element to insert at the start of the Array.
+      * Adiciona um elemento ao início de um array e retorna o novo comprimento do array.
+      * @param element elemento a ser inserido no início do Array.
       */
     //% help=arrays/unshift
     //% helper=arrayUnshift weight=25
-    //% blockId="array_unshift" block="%list| insert %value| at beginning" blockNamespace="arrays"
-    //% group="Modify"
+    //% blockId="array_unshift" block="%list(lista)| adicionar %value| no ínicio" blockNamespace="arrays"
+    //% group="ATUALIZAR"
     //unshift(...values:T[]): number; //rest is not supported in our compiler yet.
     unshift(value: T): number;
 
@@ -155,33 +156,33 @@ interface Array<T> {
     //% shim=Array_::removeElement weight=48
     removeElement(element: T): boolean;
 
-    /** Remove and return the element at a certain index. */
+    /** Remove e retorna o elemento em um determinado índice. */
     //% help=arrays/remove-at
     //% shim=Array_::removeAt weight=47
-    //% blockId="array_removeat" block="%list| get and remove value at %index" blockNamespace="arrays"
-    //% group="Read"
+    //% blockId="array_removeat" block="%list(lista)| obter e remover o valor no índice %index" blockNamespace="arrays"
+    //% group="LER"
     removeAt(index: number): T;
 
     /**
-     * Insert the value at a particular index, increases length by 1
-     * @param index the zero-based position in the list to insert the value, eg: 0
-     * @param the value to insert, eg: 0
+     * Insere o valor em um índice específico, aumentando o comprimento em 1.
+     * @param index a posição baseada em zero na lista para inserir o valor, por exemplo: 0
+     * @param value o valor a ser inserido, por exemplo: 0
      */
     //% help=arrays/insert-at
     //% shim=Array_::insertAt weight=20
-    //% blockId="array_insertAt" block="%list| insert at %index| value %value" blockNamespace="arrays"
-    //% group="Modify"
+    //% blockId="array_insertAt" block="%list(lista)| adicionar no índice %index| valor %value" blockNamespace="arrays"
+    //% group="ATUALIZAR"
     insertAt(index: number, value: T): void;
 
     /**
-      * Return the index of the first occurrence of a value in an array.
-      * @param item The value to locate in the array.
-      * @param fromIndex The array index at which to begin the search. If fromIndex is omitted, the search starts at index 0.
+      * Retorna o índice da primeira ocorrência de um valor em um array.
+      * @param item O valor a ser localizado no array.
+      * @param fromIndex O índice do array onde começar a busca. Se omitido, a busca começa no índice 0.
       */
     //% help=arrays/index-of
     //% shim=Array_::indexOf weight=40
-    //% blockId="array_indexof" block="%list| find index of %value" blockNamespace="arrays"
-    //% group="Operations"
+    //% blockId="array_indexof" block="%list(lista)| encontrar índice de %value" blockNamespace="arrays"
+    //% group="OPERAÇÕES"
     indexOf(item: T, fromIndex?: number): number;
 
     /**
@@ -202,54 +203,54 @@ interface Array<T> {
     set(index: number, value: T): void;
 
     /**
-     * Return a random value from the array
+     * Retorna um valor aleatório do array
      */
     //% help=arrays/pick-random
     //% helper=arrayPickRandom weight=25
-    //% blockId="array_pickRandom" block="get random value from %list"
+    //% blockId="array_pickRandom" block="sorteio aleatório de %list(lista)"
     //% blockNamespace="arrays"
-    //% group="Read"
+    //% group="LER"
     _pickRandom(): T;
 
     [n: number]: T;
 
-    /**
-      * Add one element to the beginning of an array and return the new length of the array.
-      * @param element to insert at the start of the Array.
-      */
+   /**
+     * Adiciona um elemento ao início de um array e retorna o novo comprimento do array.
+     * @param element elemento a ser inserido no início do Array.
+     */
     //% help=arrays/unshift
     //% helper=arrayUnshift weight=24
-    //% blockId="array_unshift_statement" block="%list| insert %value| at beginning" blockNamespace="arrays"
+    //% blockId="array_unshift_statement" block="%list(lista)| adicionar %value| no início" blockNamespace="arrays"
     //% blockAliasFor="Array.unshift"
-    //% group="Modify"
+    //% group="ATUALIZAR"
     _unshiftStatement(value: T): void;
 
-    /**
-      * Remove the last element from an array and return it.
-      */
+        /**
+     * Remove o último elemento de um array e o retorna.
+     */
     //% help=arrays/pop
     //% shim=Array_::pop weight=44
-    //% blockId="array_pop_statement" block="remove last value from %list" blockNamespace="arrays"
+    //% blockId="array_pop_statement" block="remover o último valor de %list(lista)" blockNamespace="arrays"
     //% blockAliasFor="Array.pop"
-    //% group="Modify"
+    //% group="ATUALIZAR"
     _popStatement(): void;
 
-    /**
-      * Remove the first element from an array and return it. This method changes the length of the array.
-      */
+   /**
+     * Remove o primeiro elemento de um array e o retorna. Este método altera o comprimento do array.
+     */
     //% help=arrays/shift
     //% helper=arrayShift weight=29
-    //% blockId="array_shift_statement" block="remove first value from %list" blockNamespace="arrays"
+    //% blockId="array_shift_statement" block="remover o primeiro valor de %list(lista)" blockNamespace="arrays"
     //% blockAliasFor="Array.shift"
-    //% group="Modify"
+    //% group="ATUALIZAR"
     _shiftStatement(): void;
 
-    /** Remove the element at a certain index. */
+    /** Remove o elemento em um índice específico. */
     //% help=arrays/remove-at-statement
     //% shim=Array_::removeAt weight=14
-    //% blockId="array_removeat_statement" block="%list| remove value at %index" blockNamespace="arrays"
+    //% blockId="array_removeat_statement" block="%list(lista)| remover valor no índice %index" blockNamespace="arrays"
     //% blockAliasFor="Array.removeAt"
-    //% group="Modify"
+    //% group="ATUALIZAR"
     _removeAtStatement(index: number): void;
 }
 
@@ -262,17 +263,17 @@ declare interface String {
      */
     //% shim=String_::concat weight=49
     //% blockId="string_concat" blockNamespace="text"
-    // block="join %list=text|%other"
+    // block="join %list(lista)=text|%other"
     concat(other: string): string;
 
     /**
-     * Return the character at the specified index.
-     * @param index The zero-based index of the desired character.
+     * Retorna o caractere no índice especificado.
+     * @param index O índice baseado em zero do caractere desejado.
      */
     //% shim=String_::charAt weight=48
     //% help=text/char-at
-    //% blockId="string_get" block="char from %this=text|at %pos" blockNamespace="text"
-    //% this.defl="this"
+    //% blockId="string_get" block="caractere de %this=text|na posição %pos" blockNamespace="text"
+    //% this.defl="texto"
     charAt(index: number): string;
 
     /** Returns the length of a String object. */
@@ -280,35 +281,35 @@ declare interface String {
     //% blockId="text_length" block="length of %VALUE" blockBuiltin=true blockNamespace="text"
     length: number;
 
-    /**
-     * Return the Unicode value of the character at the specified location.
-     * @param index The zero-based index of the desired character. If there is no character at the specified index, NaN is returned.
+   /**
+     * Retorna o valor Unicode do caractere na localização especificada.
+     * @param index O índice baseado em zero do caractere desejado. Se não houver caractere no índice especificado, é retornado NaN.
      */
     //% shim=String_::charCodeAt weight=46
     //% help=text/char-code-at
-    //% blockId="string_charcode_at" block="char code from $this=text|at $index" blockNamespace="text"
-    //% this.defl="this"
+    //% blockId="string_charcode_at" block="código do caractere de %this=text|na posição %index" blockNamespace="text"
+    //% this.defl="texto"
     charCodeAt(index: number): number;
 
     /**
-     * See how the order of characters in two strings is different (in ASCII encoding).
-     * @param that String to compare to target string
+     * Compara a ordem dos caracteres em duas strings (na codificação ASCII).
+     * @param that String para comparar com a string alvo
      */
     //% shim=String_::compare
     //% help=text/compare
-    //% blockId="string_compare" block="compare %this=text| to %that" blockNamespace="text"
-    //% this.defl="this"
+    //% blockId="string_compare" block="comparar %this=text| com %that" blockNamespace="text"
+    //% this.defl="texto"
     compare(that: string): number;
 
-    /**
-     * Return a substring of the current string.
-     * @param start first character index; can be negative from counting from the end, eg:0
-     * @param length number of characters to extract, eg: 10
-     */
+ /**
+ * Retorna uma substring da string atual.
+ * @param start índice do primeiro caractere; pode ser negativo para contar a partir do final, ex: 0
+ * @param length número de caracteres a serem extraídos, ex: 10
+ */
     //% helper=stringSubstr
     //% help=text/substr
-    //% blockId="string_substr" block="substring of %this=text|from %start|of length %length" blockNamespace="text"
-    //% this.defl="this"
+    //% blockId="string_substr" block="sequência de caracteres de %this=text|a partir de %start|de comprimento %length" blockNamespace="text"
+    //% this.defl="texto"
     substr(start: number, length?: number): string;
 
     /**
@@ -339,48 +340,48 @@ declare interface String {
     //% helper=stringSlice
     slice(start: number, end?: number): string;
 
-    /** Returns a value indicating if the string is empty */
+    /** Retorna um valor indicando se a string está vazia */
     //% helper=stringEmpty
     //% help=text/is-empty
     //% blockId="string_isempty" blockNamespace="text"
-    //% block="%this=text| is empty"
-    //% this.defl="this"
+    //% block="%this=text| está vazio"
+    //% this.defl="texto"
     isEmpty(): boolean;
 
-    /**
-     * Returns the position of the first occurrence of a specified value in a string.
-     * @param searchValue the text to find
-     * @param start optional start index for the search
-     */
+   /**
+ * Retorna a posição da primeira ocorrência de um valor especificado em uma string.
+ * @param searchValue o texto a ser encontrado
+ * @param start índice opcional de início para a busca
+ */
     //% shim=String_::indexOf
     //% help=text/index-of
     //% blockId="string_indexof" blockNamespace="text"
-    //% block="%this=text|find index of %searchValue"
-    //% this.defl="this"
+    //% block="%this=text|encontrar índice de %searchValue"
+    //% this.defl="texto"
     indexOf(searchValue: string, start?: number): number;
 
-    /**
-     * Determines whether a string contains the characters of a specified string.
-     * @param searchValue the text to find
-     * @param start optional start index for the search
+   /**
+     * Determina se uma string contém os caracteres de uma string especificada.
+     * @param searchValue o texto a ser encontrado
+     * @param start índice de início opcional para a busca
      */
     //% shim=String_::includes
     //% help=text/includes
     //% blockId="string_includes" blockNamespace="text"
-    //% block="%this=text|includes %searchValue"
-    //% this.defl="this"
+    //% block="%this=text|contém %searchValue"
+    //% this.defl="texto"
     includes(searchValue: string, start?: number): boolean;
 
-    /**
-     * Splits the string according to the separators
+  /**
+     * Divide a string de acordo com os separadores.
      * @param separator
      * @param limit
      */
     //% helper=stringSplit
     //% help=text/split
     //% blockId="string_split" blockNamespace="text"
-    //% block="split %this=text|at %separator"
-    //% this.defl="this"
+    //% block="dividir %this=text|em %separator"
+    //% this.defl="texto"
     split(separator?: string, limit?: number): string[];
 
     /**
@@ -407,22 +408,22 @@ declare interface String {
 }
 
 /**
-  * Convert a string to a number.
-  * @param s A string to convert into a number. eg: 123
+  * Converte uma string para um número.
+  * @param s Uma string para converter em número. Ex: 123
   */
 //% shim=String_::toNumber
 //% help=text/parse-float
-//% blockId="string_parsefloat" block="parse to number %text" blockNamespace="text"
+//% blockId="string_parsefloat" block="transformar para número %text" blockNamespace="text"
 //% text.defl="123"
 declare function parseFloat(text: string): number;
 
 /**
- * Returns a pseudorandom number between min and max included.
- * If both numbers are integral, the result is integral.
- * @param min the lower inclusive bound, eg: 0
- * @param max the upper inclusive bound, eg: 10
+ * Retorna um número pseudo-aleatório entre o mínimo e o máximo inclusivo.
+ * Se ambos os números forem inteiros, o resultado será inteiro.
+ * @param min o limite inferior inclusivo, ex: 0
+ * @param max o limite superior inclusivo, ex: 10
  */
-//% blockId="device_random" block="pick random %min|to %limit"
+//% blockId="device_random" block="sorteio aleatório de %min|a %limit"
 //% blockNamespace="Math"
 //% help=math/randint
 //% shim=Math_::randomRange
@@ -463,11 +464,11 @@ declare interface Boolean {
 declare namespace String {
 
     /**
-     * Make a string from the given ASCII character code.
+     * Cria uma string a partir do código do caractere ASCII fornecido.
      */
     //% help=math/from-char-code
     //% shim=String_::fromCharCode weight=1
-    //% blockNamespace="text" blockId="stringFromCharCode" block="text from char code %code"
+    //% blockNamespace="text" blockId="stringFromCharCode" block="texto a partir do código do caractere %code"
     function fromCharCode(code: number): string;
 }
 

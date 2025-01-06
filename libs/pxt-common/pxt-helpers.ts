@@ -297,6 +297,14 @@ namespace helpers {
         return out;
     }
 
+    /**
+     * Return a random value from the array
+     */
+    //% help=arrays/pick-random
+    //% helper=arrayPickRandom weight=25
+    //% blockId="array_pickRandom" block="valor aleatorio de %list"
+    //% blockNamespace="arrays"
+    //% group="Read"
     export function arrayPickRandom<T>(arr: T[]): T {
         return arr[Math.randomRange(0, arr.length - 1)];
     }
@@ -748,7 +756,7 @@ namespace __internal {
     //% blockHidden=true shim=TD_ID
     //% colorSecondary="#FFFFFF"
     //% ms.fieldEditor="numberdropdown" ms.fieldOptions.decompileLiterals=true
-    //% ms.fieldOptions.data='[["100 ms", 100], ["200 ms", 200], ["500 ms", 500], ["1 second", 1000], ["2 seconds", 2000], ["5 seconds", 5000]]'
+    //% ms.fieldOptions.data='[["100 ms", 100], ["200 ms", 200], ["500 ms", 500], ["1 segundo", 1000], ["2 segundos", 2000], ["5 segundos", 5000]]'
     export function __timePicker(ms: number): number {
         return ms;
     }

@@ -22,7 +22,7 @@ export function initVariables() {
         }
 
         let button = document.createElement('button') as HTMLElement;
-        button.setAttribute('text', lf("Make a Variable..."));
+        button.setAttribute('text', lf("Criar uma variável..."));
         button.setAttribute('callbackKey', 'CREATE_VARIABLE');
 
         workspace.registerButtonCallback('CREATE_VARIABLE', function (button) {
@@ -55,7 +55,7 @@ export function initVariables() {
             xmlList[xmlList.length - 1].setAttribute('gap', '24');
 
             if (Blockly.Blocks['variables_change'] || Blockly.Blocks['variables_set']) {
-                xmlList.unshift(createFlyoutGroupLabel(lf("Your Variables")));
+                xmlList.unshift(createFlyoutGroupLabel(lf("Suas variáveis")));
             }
 
             if (Blockly.Blocks['variables_change']) {
@@ -176,8 +176,8 @@ export function initVariables() {
     };
 
     // New variable dialog
-    msg.NEW_VARIABLE_TITLE = lf("New variable name:");
+    msg.NEW_VARIABLE_TITLE = lf("Nome de nova variável:");
 
     // Rename variable dialog
-    msg.RENAME_VARIABLE_TITLE = lf("Rename all '%1' variables to:");
+    msg.RENAME_VARIABLE_TITLE = lf("Renomear tudo '%1' variáveis para:");
 }

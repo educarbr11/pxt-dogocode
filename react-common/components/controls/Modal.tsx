@@ -75,8 +75,8 @@ export const Modal = (props: ModalProps) => {
                         <Button
                             className="menu-button"
                             onClick={closeClickHandler}
-                            title={lf("Go Back")}
-                            label={lf("Go Back")}
+                            title={lf("Voltar")}
+                            label={lf("Voltar")}
                             leftIcon="fas fa-arrow-left"
                         />
                     </div>

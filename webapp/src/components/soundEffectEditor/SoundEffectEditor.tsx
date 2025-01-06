@@ -140,7 +140,7 @@ export const SoundEffectEditor = (props: SoundEffectEditorProps) => {
                 handleSynthListenerRef={handleSynthListenerRef} />
             <Button
                 className="sound-effect-play-button"
-                title={cancelToken ? lf("Stop") : lf("Play")}
+                title={cancelToken ? lf("Parar") : lf("Reproduzir")}
                 onClick={handlePlayButtonClick}
                 leftIcon={cancelToken ? "fas fa-stop" : "fas fa-play"}
                 />
@@ -148,8 +148,8 @@ export const SoundEffectEditor = (props: SoundEffectEditorProps) => {
             <Button
                 className="link-button generate-similar"
                 leftIcon="fas fa-sync"
-                label={pxt.U.lf("Generate Similar Sound")}
-                title={pxt.U.lf("Generate Similar Sound")}
+                label={pxt.U.lf("Gerar som semelhante")}
+                title={pxt.U.lf("Gerar som semelhante")}
                 onClick={() => {
                     let newSound: pxt.assets.Sound;
                     if (!similarSoundSeed) {

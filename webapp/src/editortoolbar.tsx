@@ -142,11 +142,11 @@ export class EditorToolbar extends data.Component<ISettingsProps, EditorToolbarS
         }
 
         let saveInput = [];
-        saveInput.push(<label htmlFor={id} className="accessible-hidden phone hide" key="label">{lf("Type a name for your project")}</label>);
+        saveInput.push(<label htmlFor={id} className="accessible-hidden phone hide" key="label">{lf("Escreva um nome para seu projeto")}</label>);
         saveInput.push(<EditorToolbarSaveInput id={id} view={this.getViewString(View.Computer)} key="input"
             type="text"
             aria-labelledby={id}
-            placeholder={lf("Pick a name...")}
+            placeholder={lf("Escolha um nome...")}
             value={projectName || ''}
             onChangeValue={this.saveProjectName}
             disabled={projectNameReadOnly}
@@ -262,14 +262,14 @@ export class EditorToolbar extends data.Component<ISettingsProps, EditorToolbarS
         const targetTheme = pxt.appTarget.appTheme;
         const { compiling, isSaving } = this.props.parent.state;
         const { compileState } = this.state;
-        const compileTooltip = lf("Download your code to the {0}", targetTheme.boardName);
+        const compileTooltip = lf("Baixar seu código para o {0}", targetTheme.boardName);
 
         let downloadText: string;
         if (compileState === "success") {
-            downloadText = targetTheme.useUploadMessage ? lf("Uploaded!") : lf("Downloaded!")
+            downloadText = targetTheme.useUploadMessage ? lf("Uploaded!") : lf("Baixado!")
         }
         else {
-            downloadText = targetTheme.useUploadMessage ? lf("Upload") : lf("Download")
+            downloadText = targetTheme.useUploadMessage ? lf("Upload") : lf("Baixar")
         }
 
 
@@ -330,22 +330,22 @@ export class EditorToolbar extends data.Component<ISettingsProps, EditorToolbarS
         const tooltip = pxt.hwName
             || (packetioConnected && lf("Connected to {0}", deviceName))
             || (packetioConnecting && lf("Connecting..."))
-            || (boards ? lf("Click to select hardware") : (webUSBSupported ? lf("Click for one-click downloads.") : undefined));
+            || (boards ? lf("Clique para selecionar hardware") : (webUSBSupported ? lf("Click for one-click downloads.") : undefined));
 
-        const hardwareMenuText = view == View.Mobile ? lf("Hardware") : lf("Choose Hardware");
-        const downloadMenuText = view == View.Mobile ? (pxt.hwName || lf("Download")) : lf("Download as File");
+        const hardwareMenuText = view == View.Mobile ? lf("Hardware") : lf("Escolher Hardware");
+        const downloadMenuText = view == View.Mobile ? (pxt.hwName || lf("Baixar")) : lf("Baixar como arquivo");
         const downloadHelp = pxt.appTarget.appTheme.downloadDialogTheme?.downloadMenuHelpURL;
 
         // Add the ... menu
         const usbIcon = pxt.appTarget.appTheme.downloadDialogTheme?.deviceIcon || "usb";
         el.push(
-            <sui.DropdownMenu key="downloadmenu" role="menuitem" icon={`${downloadButtonIcon} horizontal ${hwIconClasses}`} title={lf("Download options")} className={`${hwIconClasses} right attached editortools-btn hw-button button`} dataTooltip={tooltip} displayAbove={true} displayRight={displayRight}>
-                {webUSBSupported && !packetioConnected && <sui.Item role="menuitem" icon={usbIcon} text={lf("Connect Device")} tabIndex={-1} onClick={this.onPairClick} />}
-                {showUsbNotSupportedHint && <sui.Item role="menuitem" icon={usbIcon} text={lf("Connect Device")} tabIndex={-1} onClick={this.onCannotPairClick} />}
+            <sui.DropdownMenu key="downloadmenu" role="menuitem" icon={`${downloadButtonIcon} horizontal ${hwIconClasses}`} title={lf("Opções de Download")} className={`${hwIconClasses} right attached editortools-btn hw-button button`} dataTooltip={tooltip} displayAbove={true} displayRight={displayRight}>
+                {webUSBSupported && !packetioConnected && <sui.Item role="menuitem" icon={usbIcon} text={lf("Conectar Dispositivo")} tabIndex={-1} onClick={this.onPairClick} />}
+                {showUsbNotSupportedHint && <sui.Item role="menuitem" icon={usbIcon} text={lf("Conectar Dispositivo")} tabIndex={-1} onClick={this.onCannotPairClick} />}
                 {webUSBSupported && (packetioConnecting || packetioConnected) && <sui.Item role="menuitem" icon={usbIcon} text={lf("Disconnect")} tabIndex={-1} onClick={this.onDisconnectClick} />}
                 {boards && <sui.Item role="menuitem" icon="microchip" text={hardwareMenuText} tabIndex={-1} onClick={this.onHwItemClick} />}
                 <sui.Item role="menuitem" icon="xicon file-download" text={downloadMenuText} tabIndex={-1} onClick={this.onHwDownloadClick} />
-                {downloadHelp && <sui.Item role="menuitem" icon="help circle" text={lf("Help")} tabIndex={-1} onClick={this.onHelpClick} />}
+                {downloadHelp && <sui.Item role="menuitem" icon="help circle" text={lf("Ajuda")} tabIndex={-1} onClick={this.onHelpClick} />}
             </sui.DropdownMenu>
         )
 
@@ -395,12 +395,12 @@ export class EditorToolbar extends data.Component<ISettingsProps, EditorToolbarS
         const bigRunButtonTooltip = (() => {
             switch (simState) {
                 case SimState.Stopped:
-                    return lf("Start");
+                    return lf("Iniciar");
                 case SimState.Pending:
                 case SimState.Starting:
-                    return lf("Starting");
+                    return lf("Iniciando");
                 default:
-                    return lf("Stop");
+                    return lf("Parar");
             }
         })();
 
