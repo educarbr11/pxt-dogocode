@@ -518,21 +518,21 @@ export class ScriptManagerDialog extends data.Component<ScriptManagerDialogProps
                     else headerActions.push(<div className="ui buttons">{openBtn}
                         <sui.DropdownMenu className="floating button" icon="dropdown">
                             <sui.Item key="editnewtab" icon="external alternate" className="icon"
-                                text={lf("New Tab")} title={lf("Open Project in a new tab")} onClick={this.handleOpenNewTab} />
+                                text={lf("Nova aba")} title={lf("Abrir novo projeto em nova aba")} onClick={this.handleOpenNewTab} />
                             {openDependent && <sui.Item key="editnewlinkedtab" icon="external alternate" className="icon"
-                                text={lf("New Connected Tab")} title={lf("Open Project in a new tab with a connected simulator")} onClick={this.handleOpenNewLinkedTab} />}
+                                text={lf("Nova aba conectado")} title={lf("Abrir novo projeto em nova aba com dispositivo conectado")} onClick={this.handleOpenNewLinkedTab} />}
                         </sui.DropdownMenu>
                     </div>);
                     headerActions.push(<sui.Button key="rename" icon="pencil" className="icon"
-                        text={lf("Rename")} textClass="landscape only" title={lf("Rename Project")} onClick={this.handleRename} />);
+                        text={lf("Renomear")} textClass="landscape only" title={lf("Renomear projeto")} onClick={this.handleRename} />);
                     headerActions.push(<sui.Button key="clone" icon="clone outline" className="icon"
-                        text={lf("Duplicate")} textClass="landscape only" title={lf("Duplicate Project")} onClick={this.handleDuplicate} />);
+                        text={lf("Duplicar")} textClass="landscape only" title={lf("Duplicar projeto")} onClick={this.handleDuplicate} />);
                 }
                 headerActions.push(<sui.Button key="delete" icon="trash" className="icon red"
-                    text={lf("Delete")} textClass="landscape only" title={lf("Delete Project")} onClick={this.handleDelete} />);
+                    text={lf("Excluir")} textClass="landscape only" title={lf("Excluir Projeto")} onClick={this.handleDelete} />);
                 if (numSelected > 1 && pxt.BrowserUtils.hasFileAccess()) {
                     headerActions.push(<sui.Button key="download-zip" icon="download" className="icon"
-                        text={lf("Download Zip")} textClass="landscape only" title={lf("Download Zip")} onClick={this.handleDownloadAsync} />);
+                        text={lf("Baixar Zip")} textClass="landscape only" title={lf("Baixar Zip")} onClick={this.handleDownloadAsync} />);
                 }
                 headerActions.push(<div key="divider" className="divider"></div>);
             }
@@ -540,10 +540,10 @@ export class ScriptManagerDialog extends data.Component<ScriptManagerDialogProps
                 title={`${view == 'grid' ? lf("List view") : lf("Grid view")}`} onClick={this.handleSwitchView} />)
         }
 
-        let dropdownLabel = lf("Last Modified");
+        let dropdownLabel = lf("Últimas Modificações");
 
         if (sortedBySearch) {
-            dropdownLabel = lf("Most Relevant");
+            dropdownLabel = lf("Mais Relevante");
         }
         else if (sortedBy == "name") {
             dropdownLabel = lf("Name");
@@ -551,15 +551,15 @@ export class ScriptManagerDialog extends data.Component<ScriptManagerDialogProps
 
         return (
             <sui.Modal isOpen={visible} className="scriptmanager" size="fullscreen"
-                onClose={this.close} dimmer={true} header={lf("My Projects")}
+                onClose={this.close} dimmer={true} header={lf("Meus Projetos")}
                 closeIcon={true} headerActions={headerActions}
                 closeOnDimmerClick closeOnDocumentClick closeOnEscape
             >
                 {!hasHeaders ? <div className="empty-content">
                     <h2 className={classList("ui center aligned header", darkTheme && "inverted")}>
                         <div className="content">
-                            {lf("It's empty in here")}
-                            <div className="sub header">{lf("Go back to create a new project")}</div>
+                            {lf("Aqui está vazio.")}
+                            <div className="sub header">{lf("Voltar para criar um novo projeto")}</div>
                         </div>
                     </h2>
                 </div> : undefined}
@@ -579,7 +579,7 @@ export class ScriptManagerDialog extends data.Component<ScriptManagerDialogProps
                                         role="menuitem"
                                         icon={!sortedBySearch && sortedBy == 'name' ? 'check' : undefined}
                                         className={classList(!sortedBySearch && sortedBy != "name" && "no-icon", darkTheme && "inverted")}
-                                        text={lf("Name")}
+                                        text={lf("Nome")}
                                         tabIndex={-1}
                                         onClick={this.handleSortName}
                                     />
@@ -587,7 +587,7 @@ export class ScriptManagerDialog extends data.Component<ScriptManagerDialogProps
                                         role="menuitem"
                                         icon={!sortedBySearch && sortedBy == 'time' ? 'check' : undefined}
                                         className={classList(!sortedBySearch && sortedBy != "time" && "no-icon", darkTheme && "inverted")}
-                                        text={lf("Last Modified")}
+                                        text={lf("Última modificação")}
                                         tabIndex={-1}
                                         onClick={this.handleSortTime}
                                     />
@@ -641,14 +641,14 @@ export class ScriptManagerDialog extends data.Component<ScriptManagerDialogProps
                         <table className={`ui definition unstackable table ${darkTheme ? 'inverted' : ''}`}>
                             <thead className="full-width">
                                 <tr>
-                                    <th onClick={this.handleSelectAll} tabIndex={0} onKeyDown={fireClickOnEnter} title={selectedAll ? lf("De-select all projects") : lf("Select all projects")} style={{ cursor: 'pointer' }}>
+                                    <th onClick={this.handleSelectAll} tabIndex={0} onKeyDown={fireClickOnEnter} title={selectedAll ? lf("De-select all projects") : lf("Selecionar todos os projetos")} style={{ cursor: 'pointer' }}>
                                         <sui.Icon icon={`circle outline large ${selectedAll ? 'check' : ''}`} />
                                     </th>
                                     <th onClick={this.handleToggleSortName} tabIndex={0} onKeyDown={fireClickOnEnter} title={lf("Sort by Name {0}", sortedAsc ? lf("ascending") : lf("descending"))} style={{ cursor: 'pointer' }}>
-                                        {lf("Name")} {!sortedBySearch && sortedBy == 'name' && <sui.Icon icon={`arrow ${sortedAsc ? 'up' : 'down'}`} />}
+                                        {lf("Nome")} {!sortedBySearch && sortedBy == 'name' && <sui.Icon icon={`arrow ${sortedAsc ? 'up' : 'down'}`} />}
                                     </th>
                                     <th onClick={this.handleToggleSortTime} tabIndex={0} onKeyDown={fireClickOnEnter} title={lf("Sort by Last Modified {0}", sortedAsc ? lf("ascending") : lf("descending"))} style={{ cursor: 'pointer' }}>
-                                        {lf("Last Modified")} {!sortedBySearch && sortedBy == 'time' ? <sui.Icon icon={`arrow ${sortedAsc ? 'up' : 'down'}`} /> : undefined}
+                                        {lf("Última modificação")} {!sortedBySearch && sortedBy == 'time' ? <sui.Icon icon={`arrow ${sortedAsc ? 'up' : 'down'}`} /> : undefined}
                                     </th>
                                 </tr>
                             </thead>
@@ -672,7 +672,7 @@ export class ScriptManagerDialog extends data.Component<ScriptManagerDialogProps
                     : undefined}
 
                 {download &&
-                    <Modal title={lf("Preparing your zip file...")} onClose={this.handleDownloadProgressClose}>
+                    <Modal title={lf("Preparando sua pasta zip...")} onClose={this.handleDownloadProgressClose}>
                         <ProgressBar percentage={100 * (download.completed / download.max)} />
                     </Modal>}
             </sui.Modal>

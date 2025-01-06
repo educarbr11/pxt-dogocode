@@ -152,15 +152,15 @@ export class Projects extends auth.Component<ISettingsProps, ProjectsState> {
                         onClick={scriptManager && this.showScriptManager} onKeyDown={scriptManager && fireClickOnEnter}
                     >
                         {scriptManager ? <h2 className="ui header myproject-header">
-                            {lf("My Projects")}
-                            <span className="view-all-button" tabIndex={0} title={lf("View all projects")} role="button">
-                                {lf("View All")}
+                            {lf("Meus Projetos")}
+                            <span className="view-all-button" tabIndex={0} title={lf("Ver todos os projetos")} role="button">
+                                {lf("Ver tudo")}
                             </span>
-                        </h2> : <h2 className="ui header">{lf("My Projects")}</h2>}
+                        </h2> : <h2 className="ui header">{lf("Meus Projetos")}</h2>}
                     </div>
                     <div className="column right aligned" style={{ zIndex: 1 }}>
                         {pxt.appTarget.compile || (pxt.appTarget.cloud && pxt.appTarget.cloud.sharing && pxt.appTarget.cloud.importing) ?
-                            <sui.Button key="import" icon="upload" className="import-dialog-btn" textClass="landscape only" text={lf("Import")} title={lf("Import a project")} onClick={this.importProject} /> : undefined}
+                            <sui.Button key="import" icon="upload" className="import-dialog-btn" textClass="landscape only" text={lf("Importar")} title={lf("Importar um projeto")} onClick={this.importProject} /> : undefined}
                     </div>
                 </div>
                 <div className="content">
@@ -307,9 +307,9 @@ export class ProjectSettingsMenu extends data.Component<ProjectSettingsMenuProps
                 {lf("Disconnect GitHub")}
             </div>}
             {showDivider && <div className="ui divider"></div>}
-            {reportAbuse ? <sui.Item role="menuitem" icon="warning circle" text={lf("Report Abuse...")} onClick={this.showReportAbuse} /> : undefined}
-            <sui.Item role="menuitem" icon='sign out' text={lf("Reset")} onClick={this.showResetDialog} />
-            <sui.Item role="menuitem" text={lf("About...")} onClick={this.showAboutDialog} />
+            {reportAbuse ? <sui.Item role="menuitem" icon="warning circle" text={lf("Reportar Abuso...")} onClick={this.showReportAbuse} /> : undefined}
+            <sui.Item role="menuitem" icon='sign out' text={lf("Resetar")} onClick={this.showResetDialog} />
+            <sui.Item role="menuitem" text={lf("Sobre...")} onClick={this.showAboutDialog} />
             {targetTheme.feedbackUrl ? <a className="ui item" href={targetTheme.feedbackUrl} role="menuitem" title={lf("Give Feedback")} target="_blank" rel="noopener noreferrer" >{lf("Give Feedback")}</a> : undefined}
         </sui.DropdownMenu>;
     }
@@ -759,11 +759,11 @@ export class ProjectsCarousel extends data.Component<ProjectsCarouselProps, Proj
                 .slice(0, ProjectsCarousel.NUM_PROJECTS_HOMESCREEN);
             const isFirstProject = (!headers || headers?.length == 0);
             return <carousel.Carousel tickId="myprojects" bleedPercent={20}>
-                {showNewProject && <div role="button" className="ui card link buttoncard newprojectcard" title={lf("Creates a new empty project")}
+                {showNewProject && <div role="button" className="ui card link buttoncard newprojectcard" title={lf("Criar um novo projeto vazio")}
                     onClick={() => this.newProject(isFirstProject)} onKeyDown={fireClickOnEnter} >
                     <div className="content">
                         <sui.Icon icon="huge add circle" />
-                        <span className="header">{lf("New Project")}</span>
+                        <span className="header">{lf("Novo Projeto")}</span>
                     </div>
                 </div>}
                 {showCloudProjectsCard && <div role="button" className="ui card link buttoncard cloudprojectscard" title={lf("Sign in to see cloud projects")}
@@ -1208,7 +1208,7 @@ function applyCodeCardAction(projectView: IProjectView, ticSrc: "projects" | "he
             pxt.log("shared example")
             let id = pxt.github.normalizeRepoId(url) || pxt.Cloud.parseScriptId(url);
             if (!id) {
-                core.errorNotification(lf("Sorry, the project url looks invalid."));
+                core.errorNotification(lf("Desculpe, o URL do projeto parece inválido."));
             } else {
                 window.location.hash = "pub:" + id;
             }
@@ -1233,7 +1233,7 @@ function applyCodeCardAction(projectView: IProjectView, ticSrc: "projects" | "he
                     if (/^\//i.test(url))
                         return; // Handled by href
                     else
-                        core.errorNotification(lf("Sorry, the project url looks invalid."));
+                        core.errorNotification(lf("Desculpe, o URL do projeto parece inválido."));
                 else
                     projectView.newEmptyProject(scr.name.toLowerCase());
             }
@@ -1316,41 +1316,41 @@ export class ImportDialog extends data.Component<ISettingsProps, ImportDialogSta
         return (
             <sui.Modal isOpen={visible} className={classes} size="small"
                 onClose={this.close} dimmer={true}
-                closeIcon={true} header={lf("Import")}
+                closeIcon={true} header={lf("Importar")}
                 closeOnDimmerClick closeOnDocumentClick closeOnEscape
             >
                 <div className={`ui ${cardClass} cards`}>
                     {showOpenFiles &&
                         <codecard.CodeCardView
-                            ariaLabel={lf("Open files from your computer")}
+                            ariaLabel={lf("Abrir um arquivo do seu computador")}
                             role="button"
                             key={'import'}
                             icon="upload"
                             iconColor="secondary"
-                            name={lf("Import File...")}
-                            description={lf("Open files from your computer")}
+                            name={lf("Importar arquivo...")}
+                            description={lf("Abrir arquivo do seu computador")}
                             onClick={this.importHex}
                         />}
                     {showImport &&
                         <codecard.CodeCardView
-                            ariaLabel={lf("Open a shared project URL or GitHub repo")}
+                            ariaLabel={lf("Abrir url de projeto compartilhado ou Repositório do Github")}
                             role="button"
                             key={'importurl'}
                             icon="cloud download"
                             iconColor="secondary"
                             name={lf("Import URL...")}
-                            description={lf("Open a shared project URL or GitHub repo")}
+                            description={lf("Abrir url de projeto compartilhado ou Repositório do Github")}
                             onClick={this.importUrl}
                         />}
                     {showCreateGithubRepo &&
                         <codecard.CodeCardView
-                            ariaLabel={lf("Clone or create your own GitHub repository")}
+                            ariaLabel={lf("Clonar ou criar um repositório no github")}
                             role="button"
                             key={'importgithub'}
                             icon="github"
                             iconColor="secondary"
-                            name={lf("Your GitHub Repo...")}
-                            description={lf("Clone or create your own GitHub repository")}
+                            name={lf("Seu Repositório do GitHub...")}
+                            description={lf("Clonar ou criar um repositório no github")}
                             onClick={this.cloneGithub}
                         />}
                 </div>
@@ -1548,7 +1548,7 @@ export class NewProjectDialog extends data.Component<ISettingsProps, NewProjectD
 
         const actions: sui.ModalButton[] = [
             {
-                label: lf("Create"),
+                label: lf("Criar"),
                 onclick: this.save,
                 icon: 'check',
                 className: 'approve positive'
@@ -1559,23 +1559,23 @@ export class NewProjectDialog extends data.Component<ISettingsProps, NewProjectD
         const langOpts: sui.SelectItem[] = [
             {
                 value: pxt.editor.LanguageRestriction.Standard,
-                display: python ? lf("Blocks, {0}, and {1}", "JavaScript", "Python") : lf("Blocks and {0}", "JavaScript")
+                display: python ? lf("Blocos, {0}, e {1}", "JavaScript", "Python") : lf("Blocos e    {0}", "JavaScript")
             },
             python && {
                 value: pxt.editor.LanguageRestriction.PythonOnly,
-                display: lf("{0} Only", "Python")
+                display: lf("{0} Apenas", "Python")
             },
             {
                 value: pxt.editor.LanguageRestriction.JavaScriptOnly,
-                display: lf("{0} Only", "JavaScript")
+                display: lf("{0} Apenas", "JavaScript")
             }
         ];
         const classes = this.props.parent.createModalClasses("newproject");
-        const prompt = lf("Give your project a name.");
+        const prompt = lf("Dê um nome ao seu projeto.");
 
         return <sui.Modal isOpen={visible} className={classes} size="tiny"
             onClose={this.hide} dimmer={true} buttons={actions}
-            closeIcon={true} header={lf("Create a Project {0}", emoji)}
+            closeIcon={true} header={lf("Criar um projeto {0}", emoji)}
             closeOnDimmerClick closeOnDocumentClick closeOnEscape
         >
             <div>
@@ -1589,8 +1589,8 @@ export class NewProjectDialog extends data.Component<ISettingsProps, NewProjectD
             </div>
             {chooseLanguageRestrictionOnNewProject && <div>
                 <br />
-                <sui.ExpandableMenu title={lf("Code options")} onShow={this.onExpandedMenuShow} onHide={this.onExpandedMenuHide}>
-                    <sui.Select options={langOpts} onChange={this.handleLanguageChange} aria-label={lf("Select Language")} />
+                <sui.ExpandableMenu title={lf("Opções de código")} onShow={this.onExpandedMenuShow} onHide={this.onExpandedMenuHide}>
+                    <sui.Select options={langOpts} onChange={this.handleLanguageChange} aria-label={lf("Selecionar linguagem")} />
                 </sui.ExpandableMenu>
             </div>}
         </sui.Modal>
@@ -1598,7 +1598,7 @@ export class NewProjectDialog extends data.Component<ISettingsProps, NewProjectD
 }
 
 function projectNameToEmoji(name: string) {
-    const untitled = lf("Untitled");
+    const untitled = lf("Sem título");
 
     let emoji = "";
     if (name && untitled.indexOf(name) === -1) {

@@ -1322,9 +1322,9 @@ export class Modal extends data.Component<ModalProps, ModalState> {
                 {headerIcon && <Icon icon={headerIcon} />}
                 <h3 className="header-title" style={{ margin: `0 ${helpUrl ? '-20rem' : '0'} 0 ${showBack ? '-20rem' : '0'}` }}>{header}</h3>
                 {showBack ? <div className="header-close">
-                    <Button className="back-button large" title={lf("Go back")} onClick={onClose} tabIndex={0} onKeyDown={fireClickOnEnter}>
+                    <Button className="back-button large" title={lf("Voltar")} onClick={onClose} tabIndex={0} onKeyDown={fireClickOnEnter}>
                         <Icon icon="arrow left" />
-                        <span className="ui text landscape only">{lf("Go back")}</span>
+                        <span className="ui text landscape only">{lf("Voltar")}</span>
                     </Button>
                 </div> : undefined}
                 {helpUrl ?

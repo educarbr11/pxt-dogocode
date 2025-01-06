@@ -242,7 +242,7 @@ export const HeaderBar: React.FC<HeaderBarProps> = () => {
                     id="settings-dropdown"
                     items={settingItems}
                     icon="fas fa-cog large"
-                    title={lf("Settings")} />
+                    title={lf("Configurações")} />
                 {getUserMenu()}
             </div>
         </MenuBar>

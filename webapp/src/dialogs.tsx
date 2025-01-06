@@ -387,18 +387,18 @@ export function showImportUrlDialogAsync() {
                 <i className="user icon" aria-hidden={true}></i>
                 <div className="content">
                     <h3 className="header">
-                        {lf("User-provided content")}
+                        {lf("Conteúdo fornecido pelo usuário")}
                     </h3>
                     <p>
-                        {lf("The content below is provided by a user, and is not endorsed by Microsoft.")}
+                        {lf("O conteúdo abaixo é fornecido por um usuário e não é endossado pelo DoGoCode e Microsoft.")}
                         <br />
-                        {lf("If you think it's not appropriate, please report abuse through Settings -> Report Abuse.")}
+                        {lf("Se você acha que não é apropriado, denuncie o abuso em Configurações -> Denunciar abuso.")}
                     </p>
                 </div>
             </div>
             <div className="ui field">
-                <label id="selectUrlToOpenLabel">{lf("Copy the URL of the project.")}</label>
-                <input type="url" tabIndex={0} autoFocus aria-labelledby="selectUrlToOpenLabel" placeholder={lf("{0} or {1}...", shareUrl, "https://github.com/...")} className="ui blue fluid"></input>
+                <label id="selectUrlToOpenLabel">{lf("Copie o URL do projeto.")}</label>
+                <input type="url" tabIndex={0} autoFocus aria-labelledby="selectUrlToOpenLabel" placeholder={lf("{0} ou {1}...", shareUrl, "https://github.com/...")} className="ui blue fluid"></input>
             </div>
         </div>,
     }).then(res => {
@@ -409,7 +409,7 @@ export function showImportUrlDialogAsync() {
             if (!projectId)
                 projectId = pxt.Cloud.parseScriptId(url);
             if (!projectId) {
-                return Promise.reject(new Error(lf("Sorry, the project url looks invalid.")));
+                return Promise.reject(new Error(lf("Desculpe, o URL do projeto parece inválido.")));
             }
 
             return Promise.resolve(projectId);
@@ -422,10 +422,10 @@ export function showImportUrlDialogAsync() {
 
 export function showGithubTokenError(err: any) {
     if (err.statusCode == 401) {
-        core.errorNotification(lf("GitHub didn't accept token"))
+        core.errorNotification(lf("GitHub não aceitou token"))
         return true
     } else if (err.statusCode == 404) {
-        core.errorNotification(lf("Token has neither '{0}' nor '{1}' scope", "repo", "public_repo"))
+        core.errorNotification(lf("O token não tem escopo '{0}' nem '{1}'", "repo", "public_repo"))
         return true
     } else {
         return false
@@ -444,12 +444,12 @@ export function showCreateGithubRepoDialogAsync(name?: string) {
     let repoPublic: boolean = true;
 
     function repoNameError(): string {
-        if (repoName == "pxt-" + lf("Untitled").toLocaleLowerCase()
+        if (repoName == "pxt-" + lf("SemTitulo").toLocaleLowerCase()
             || repoName == "pxt-untitled")
-            return lf("Please pick a different name.")
+            return lf("Escolha um nome diferente.")
         const repoNameRx = /^[\w\-]{1,64}$/;
         if (!repoNameRx.test(repoName))
-            return lf("Repository names must be less than 64 characters and cannot include spaces or special characters.");
+            return lf("Os nomes dos repositórios devem ter menos de 64 caracteres e não podem incluir espaços ou caracteres especiais.");
         return undefined;
     }
 
@@ -618,18 +618,18 @@ export function showImportFileDialogAsync(options?: ImportFileOptions) {
         exts.push(".uf2");
     }
     return core.confirmAsync({
-        header: lf("Open {0} file", exts.join(lf(" or "))),
+        header: lf("Abrir {0} Arquivo", exts.join(lf(" ou "))),
         hasCloseIcon: true,
         onLoaded: (el) => {
             input = el.querySelectorAll('input')[0] as HTMLInputElement;
         },
         jsx: <div className="ui form">
             <div className="ui field">
-                <label id="selectFileToOpenLabel">{lf("Select a {0} file to open.", exts.join(lf(" or ")))}</label>
+                <label id="selectFileToOpenLabel">{lf("Selecionar um {0} arquivo para abrir.", exts.join(lf(" ou ")))}</label>
                 <input type="file" tabIndex={0} autoFocus aria-labelledby="selectFileToOpenLabel" className="ui blue fluid"></input>
             </div>
             <div className="ui secondary segment">
-                {lf("You can import files by dragging and dropping them anywhere in the editor!")}
+                {lf("Você pode importar arquivos arrastando e soltando-os em qualquer lugar do editor!")}
             </div>
         </div>,
     }).then(res => {

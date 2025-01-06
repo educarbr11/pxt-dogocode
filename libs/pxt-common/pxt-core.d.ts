@@ -423,7 +423,7 @@ declare function parseFloat(text: string): number;
  * @param min o limite inferior inclusivo, ex: 0
  * @param max o limite superior inclusivo, ex: 10
  */
-//% blockId="device_random" block="sorteio de %min|a %limit"
+//% blockId="device_random" block="sorteio aleatório de %min|a %limit"
 //% blockNamespace="Math"
 //% help=math/randint
 //% shim=Math_::randomRange
