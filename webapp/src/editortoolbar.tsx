@@ -345,7 +345,7 @@ export class EditorToolbar extends data.Component<ISettingsProps, EditorToolbarS
                 {webUSBSupported && (packetioConnecting || packetioConnected) && <sui.Item role="menuitem" icon={usbIcon} text={lf("Disconnect")} tabIndex={-1} onClick={this.onDisconnectClick} />}
                 {boards && <sui.Item role="menuitem" icon="microchip" text={hardwareMenuText} tabIndex={-1} onClick={this.onHwItemClick} />}
                 <sui.Item role="menuitem" icon="xicon file-download" text={downloadMenuText} tabIndex={-1} onClick={this.onHwDownloadClick} />
-                {downloadHelp && <sui.Item role="menuitem" icon="help circle" text={lf("Ajuda")} tabIndex={-1} onClick={this.onHelpClick} />}
+                {/* {downloadHelp && <sui.Item role="menuitem" icon="help circle" text={lf("Ajuda")} tabIndex={-1} onClick={this.onHelpClick} />} */}
             </sui.DropdownMenu>
         )
 

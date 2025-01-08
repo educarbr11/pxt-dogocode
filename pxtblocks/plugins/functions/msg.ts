@@ -32,7 +32,7 @@ defineMsg(MsgKey.REPORTERS_HUE, "#A80000");
 
 defineMsg(MsgKey.FUNCTIONS_CALL_TITLE, "call");
 
-defineMsg(MsgKey.FUNCTIONS_DEFNORETURN_TITLE, "function");
+defineMsg(MsgKey.FUNCTIONS_DEFNORETURN_TITLE, "");
 
 defineMsg(MsgKey.FUNCTIONS_GO_TO_DEFINITION_OPTION, "Go to Definition");
 

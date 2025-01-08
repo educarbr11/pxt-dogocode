@@ -522,7 +522,7 @@ export function createFunctionsFlyoutCategory(workspace: Blockly.WorkspaceSvg) {
     if (elems.length > 1) {
         let returnBlock = mkReturnStatementBlock();
         // Add divider
-        elems.splice(1, 0, createFlyoutGroupLabel(lf("Your Functions")));
+        elems.splice(1, 0, createFlyoutGroupLabel(lf("Seus blocos")));
         // Insert after the "make a function" button
         elems.splice(1, 0, returnBlock as HTMLElement);
     }

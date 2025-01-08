@@ -16,7 +16,7 @@ export function initMath(blockInfo: pxtc.BlocksInfo) {
     Blockly.Blocks[mathOp2Id] = {
         init: function () {
             this.jsonInit({
-                "message0": lf("%1 of %2 and %3"),
+                "message0": lf("%1 de %2 e %3"),
                 "args0": [
                     {
                         "type": "field_dropdown",

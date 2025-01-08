@@ -413,7 +413,7 @@ namespace pxt.blocks {
                 },
                 url: '/blocks/math',
                 operators: {
-                    'op': ["min", "max"]
+                    'op': ["mínimo", "máximo"]
                 },
                 category: 'math',
                 block:{
@@ -550,7 +550,7 @@ namespace pxt.blocks {
                 url: '/blocks/loops/repeat',
                 category: 'loops',
                 block: {
-                    CONTROLS_REPEAT_TITLE: Util.lf("repete %1 vezes"),
+                    CONTROLS_REPEAT_TITLE: Util.lf("repetir %1 vezes"),
                     CONTROLS_REPEAT_INPUT_DO: Util.lf("{id:repeat}faça")
                 }
             },
@@ -717,11 +717,11 @@ namespace pxt.blocks {
             },
             'procedures_defnoreturn': {
                 name: Util.lf("definir a função"),
-                tooltip: Util.lf("Crie uma função."),
+                tooltip: Util.lf("Cria uma função."),
                 url: '/types/function/define',
                 category: 'functions',
                 block: {
-                    PROCEDURES_DEFNORETURN_TITLE: Util.lf("função"),
+                    PROCEDURES_DEFNORETURN_TITLE: Util.lf(""),
                     PROCEDURE_ALREADY_EXISTS: Util.lf("Já existe uma função chamada '%1'.")
                 }
             },

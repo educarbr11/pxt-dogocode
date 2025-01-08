@@ -57,7 +57,7 @@ export function showAboutDialogAsync(projectView: IProjectView) {
             const isPxtElectron = pxt.BrowserUtils.isPxtElectron();
             const latestElectronRelease = config?.electronManifest?.latest;
             return core.confirmAsync({
-                header: lf("About"),
+                header: lf("Sobre"),
                 hasCloseIcon: true,
                 agreeLbl: lf("Ok"),
                 agreeClass: "positive",
@@ -75,8 +75,8 @@ export function showAboutDialogAsync(projectView: IProjectView) {
                     {compileVariantInfos?.length ? compileVariantInfos.map(info => <div key={info.variantName}>{renderCompileLink(info.variantName, info.compileService)}</div>) : undefined}
                     <p><br /></p>
                     <p>
-                        {targetTheme.termsOfUseUrl ? <a target="_blank" className="item" href={targetTheme.termsOfUseUrl} rel="noopener noreferrer">{lf("Terms of Use")}</a> : undefined}
-                        &nbsp;&nbsp;&nbsp; {targetTheme.privacyUrl ? <a target="_blank" className="item" href={targetTheme.privacyUrl} rel="noopener noreferrer">{lf("Privacy")}</a> : undefined}
+                        {/* {targetTheme.termsOfUseUrl ? <a target="_blank" className="item" href={targetTheme.termsOfUseUrl} rel="noopener noreferrer">{lf("Terms of Use")}</a> : undefined} */}
+                        {/* &nbsp;&nbsp;&nbsp; {targetTheme.privacyUrl ? <a target="_blank" className="item" href={targetTheme.privacyUrl} rel="noopener noreferrer">{lf("Privacy")}</a> : undefined} */}
                     </p>
                     {targetTheme.copyrightText ? <p> {targetTheme.copyrightText} </p> : undefined}
                 </div>
@@ -371,7 +371,7 @@ export function showImportUrlDialogAsync() {
     const shareUrl = pxt.appTarget.appTheme.shareUrl || "https://makecode.com/";
 
     return core.confirmAsync({
-        header: lf("Open project URL"),
+        header: lf("Abrir URL do Projeto"),
         hasCloseIcon: true,
         onLoaded: (el) => {
             input = el.querySelector('input');
@@ -478,13 +478,13 @@ export function showCreateGithubRepoDialogAsync(name?: string) {
 
     return core.confirmAsync({
         hasCloseIcon: true,
-        header: lf("Create GitHub repository"),
+        header: lf("Criar repositório GitHub"),
         jsxd: () => {
             const nameErr = repoNameError();
             return <div className={`ui form`}>
                 <p>
-                    {lf("Host your code on GitHub and work together with friends.")}
-                    {sui.helpIconLink("/github", lf("Learn more about GitHub"))}
+                    {lf("Hospede seu código no GitHub e trabalhe junto com amigos.")}
+                    {sui.helpIconLink("/github", lf("Saiba mais sobre o GitHub"))}
                 </p>
                 <div className="ui field">
                     <sui.Input type="url" autoFocus value={repoName} onChange={onNameChanged}
@@ -718,12 +718,12 @@ export function showReportAbuseAsync(pubId?: string) {
 
 export function showResetDialogAsync() {
     return core.confirmAsync({
-        header: lf("Reset"),
-        body: lf("You are about to clear all projects. Are you sure? This operation cannot be undone."),
+        header: lf("Resetar"),
+        body: lf("Você está prestes a limpar todos os projetos. Tem certeza? Esta operação não pode ser desfeita."),
         agreeLbl: lf("Reset"),
         agreeClass: "red",
         agreeIcon: "sign out",
-        disagreeLbl: lf("Cancel")
+        disagreeLbl: lf("Cancelar")
     })
 }
 
@@ -777,11 +777,11 @@ export function renderBrowserDownloadInstructions(saveonly?: boolean, redeploy?:
                                 <div className="ui">
                                     <div className="content">
                                         <div className="description">
-                                            {lf("Your code is being downloaded as a {1} file. You can drag this file to your {0} using your computer's file explorer.", boardName, fileExtension)}
+                                            {lf("Seu código está sendo baixado como um arquivo {1}. Você pode arrastar esse arquivo para o {0} usando o explorador de arquivos do seu computador.", boardName, fileExtension)}
                                         </div>
                                         {webUSBSupported &&
                                             <div className="download-callout">
-                                                <label className="ui purple ribbon label">{lf("Want faster downloads?")}</label>
+                                                <label className="ui purple ribbon label">{lf("Quer downloads mais rápidos?")}</label>
                                                 <div className="ui two column grid content">
                                                     <div className="icon-align three wide column">
                                                         <div />
@@ -789,8 +789,8 @@ export function renderBrowserDownloadInstructions(saveonly?: boolean, redeploy?:
                                                         <div />
                                                     </div>
                                                     <div className="thirteen wide column">
-                                                        {lf("Download your code faster by pairing with WebUSB!")}
-                                                        <a className="ui button purple" onClick={onPairClicked}>{lf("Pair Now")}</a>
+                                                        {lf("Baixe seu código mais rápido emparelhando com WebUSB!")}
+                                                        <a className="ui button purple" onClick={onPairClicked}>{lf("Parear Agora!")}</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -814,7 +814,7 @@ export function renderBrowserDownloadInstructions(saveonly?: boolean, redeploy?:
             <div>
                 {!saveonly &&
                     <sui.Checkbox
-                        inputLabel={lf("Don't show this again")}
+                        inputLabel={lf("Não mostrar novamente")}
                         onChange={onCheckboxClicked}
                     />
                 }
@@ -825,8 +825,8 @@ export function renderBrowserDownloadInstructions(saveonly?: boolean, redeploy?:
 
 export function renderIncompatibleHardwareDialog() {
     const boardName = pxt.appTarget.appTheme.boardName || lf("device");
-    const bodyText = lf("Oops! Looks like your project has code that won't run on the hardware you have connected. Would you like to download anyway?");
-    const helpText = lf("Learn more about what's supported by your hardware…")
+    const bodyText = lf("Ops! Parece que seu projeto possui código que não será executado no hardware conectado. Você gostaria de baixar mesmo assim?");
+    const helpText = lf("Saiba mais sobre o que é compatível com seu hardware…")
     const helpURL = pxt.appTarget.appTheme.downloadDialogTheme?.incompatibleHardwareHelpURL;
     const imageURL = pxt.appTarget.appTheme.downloadDialogTheme?.incompatibleHardwareImage;
     const columns = imageURL ? "two" : "one";
@@ -932,7 +932,7 @@ export async function showTurnBackTimeDialogAsync(header: pxt.workspace.Header, 
 
         invalidate("headers:");
 
-        core.infoNotification(lf("Project copy saved to My Projects"))
+        core.infoNotification(lf("Cópia do projeto salva em Meus Projetos"))
     }
 
     await core.dialogAsync({

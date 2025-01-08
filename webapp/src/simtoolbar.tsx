@@ -125,13 +125,13 @@ export class SimulatorToolbar extends data.Component<SimulatorProps, {}> {
         const runControlsEnabled = !debugging && !isStarting && !isSimulatorPending;
         const collapse = !targetTheme.bigRunButton;
 
-        const makeTooltip = lf("Open assembly instructions");
-        const restartTooltip = lf("Restart the simulator");
-        const debugTooltip = lf("Toggle debug mode");
-        const keymapTooltip = lf("View simulator keyboard shortcuts");
-        const fullscreenTooltip = isFullscreen ? lf("Exit fullscreen mode") : lf("Launch in fullscreen");
-        const screenshotTooltip = targetTheme.simScreenshotKey ? lf("Take Screenshot (shortcut {0})", targetTheme.simScreenshotKey) : lf("Take Screenshot");
-        const collapseIconTooltip = collapsed ? lf("Show the simulator") : lf("Hide the simulator");
+        const makeTooltip = lf("Abra as instruções de montagem");
+        const restartTooltip = lf("Reiniciar os simulador");
+        const debugTooltip = lf("Alternar para modo de debug");
+        const keymapTooltip = lf("Ver atalhos de teclado do simulador");
+        const fullscreenTooltip = isFullscreen ? lf("Sair do modo de tela cheia") : lf("Iniciar em tela cheia");
+        const screenshotTooltip = targetTheme.simScreenshotKey ? lf("Bater uma foto (print da tela {0})", targetTheme.simScreenshotKey) : lf("Fazer print da tela");
+        const collapseIconTooltip = collapsed ? lf("Mostrar o simulador") : lf("Esconder o simulador");
         const simSerialTooltip = lf("Open simulator console");
         const devSerialTooltip = lf("Open device console");
 
@@ -202,12 +202,12 @@ export class PlayButton extends sui.StatelessUIElement<PlayButtonProps> {
         const runTooltip = (() => {
             switch (simState) {
                 case SimState.Stopped:
-                    return lf("Start the simulator");
+                    return lf("Inicia o simulador");
                 case SimState.Pending:
                 case SimState.Starting:
-                    return lf("Starting the simulator");
+                    return lf("Iniciando o simulador");
                 case SimState.Running:
-                    return lf("Stop the simulator");
+                    return lf("Parar o simulador");
             }
 
             return undefined;
@@ -228,13 +228,13 @@ const MuteButton = ({onClick, state, className}: MuteButtonProps) => {
 
     switch (state) {
         case MuteState.Muted:
-            tooltip = lf("Unmute audio");
+            tooltip = lf("Ligar áudio");
             break;
         case MuteState.Unmuted:
-            tooltip = lf("Mute audio");
+            tooltip = lf("Silenciar áudio");
             break;
         case MuteState.Disabled:
-            tooltip = lf("Click inside the simulator to enable audio");
+            tooltip = lf("Clique dentro do simulador para ativar o áudio");
             break;
     }
 

@@ -519,11 +519,11 @@ function initReturnStatement(b: Blockly.Block) {
     }
 
     function addPlusButton() {
-        addButton(buttonAddName, (b as any).ADD_IMAGE_DATAURI, lf("Add return value"));
+        addButton(buttonAddName, (b as any).ADD_IMAGE_DATAURI, lf("Adicionar retorno de valor"));
     }
 
     function addMinusButton() {
-        addButton(buttonRemName, (b as any).REMOVE_IMAGE_DATAURI, lf("Remove return value"));
+        addButton(buttonRemName, (b as any).REMOVE_IMAGE_DATAURI, lf("Remover retorno de valor"));
     }
 
     function mutationString() {

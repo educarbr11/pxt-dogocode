@@ -200,7 +200,7 @@ export class ShareEditor extends auth.Component<ShareEditorProps, ShareEditorSta
 
         return visible
             ? <Modal
-                title={lf("Share Project")}
+                title={lf("Compartilhar Projeto")}
                 className={`sharedialog${thumbnails ? " wide" : ""}`}
                 parentElement={document.getElementById("root") || undefined}
                 onClose={this.hide}>

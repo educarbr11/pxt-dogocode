@@ -117,14 +117,14 @@ function showUploadInstructionsAsync(
         className: 'downloaddialog',
         buttons: [
             downloadAgain && {
-                label: userDownload ? lf("Download") : lf("Download Again"),
+                label: userDownload ? lf("Download") : lf("Baixar novamente"),
                 className: userDownload ? "primary" : "lightgrey",
                 urlButton: true,
                 url,
                 fileName: fn
             },
             {
-                label: lf("Done"),
+                label: lf("Feito"),
                 className: "primary",
                 onclick: () => {
                     pxt.tickEvent('downloaddialog.done')
@@ -143,7 +143,7 @@ export function showReconnectDeviceInstructionsAsync(
     const helpUrl = pxt.appTarget.appTheme.usbDocs;
     const jsx = webusb.renderDisconnectDeviceDialog();
     return confirmAsync({
-        header: lf("{0} Connection failed...", boardName),
+        header: lf("{0} conexão falhou...", boardName),
         jsx,
         hasCloseIcon: true,
         hideAgree: true,
@@ -152,7 +152,7 @@ export function showReconnectDeviceInstructionsAsync(
         className: 'downloaddialog',
         buttons: [
             {
-                label: lf("Done"),
+                label: lf("Feito"),
                 className: "primary",
                 onclick: () => {
                     pxt.tickEvent('downloaddialog.done')
@@ -197,7 +197,7 @@ function nativeHostDeployCoreAsync(resp: pxtc.CompileResult): Promise<void> {
 
 function nativeHostSaveCoreAsync(resp: pxtc.CompileResult): Promise<void> {
     log(`native save`)
-    core.infoNotification(lf("Saving file..."));
+    core.infoNotification(lf("Salvando arquivo..."));
     const out = resp.outfiles[pxt.outputName()]
     const nativePostMessage = nativeHostPostMessageFunction();
     nativePostMessage(<NativeHostMessage>{
@@ -251,7 +251,7 @@ export async function hidDeployCoreAsync(resp: pxtc.CompileResult, d?: pxt.comma
 
     const deployCore = async () => {
         const dev = await pxt.packetio.initAsync(false);
-        core.showLoading(LOADING_KEY, lf("Downloading..."));
+        core.showLoading(LOADING_KEY, lf("Baixando..."));
         try {
             await dev.reflashAsync(resp, percentageFlashed => {
                 core.updateLoadingCompletion(LOADING_KEY, percentageFlashed);
@@ -317,9 +317,9 @@ function localhostDeployCoreAsync(resp: pxtc.CompileResult): Promise<void> {
         allowHttpErrors: true // To prevent "Network request failed" warning in case of error. We're not actually doing network requests in localhost scenarios
     }).then(r => {
         if (r.statusCode !== 200) {
-            core.errorNotification(lf("There was a problem, please try again"));
+            core.errorNotification(lf("Ocorreu um problema, tente novamente"));
         } else if (r.json["boardCount"] === 0) {
-            core.warningNotification(lf("Please connect your {0} to your computer and try again", pxt.appTarget.appTheme.boardName));
+            core.warningNotification(lf("Conecte seu {0} ao computador e tente novamente", pxt.appTarget.appTheme.boardName));
         }
     });
 
@@ -529,11 +529,11 @@ export async function pairAsync(implicitlyCalled?: boolean): Promise<boolean> {
                 return true;
             } catch (e) {
                 // Device
-                core.infoNotification(lf("Oops, connection failed."));
+                core.infoNotification(lf("Oops, conexão falhou."));
                 return false;
             }
         case pxt.commands.WebUSBPairResult.Failed:
-            core.infoNotification(lf("Oops, no device was paired."));
+            core.infoNotification(lf("Oops, aparelho não conectado."));
             return false;
         case pxt.commands.WebUSBPairResult.UserRejected:
             // User exited pair flow intentionally

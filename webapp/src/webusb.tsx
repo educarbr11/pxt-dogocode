@@ -149,7 +149,7 @@ function showConnectDeviceDialogAsync(confirmAsync: ConfirmAsync) {
                 <div className="ui">
                     <div className="content">
                         <div className="description">
-                            {lf("First, make sure your {0} is connected to your computer with a USB cable.", boardName)}
+                            {lf("Primeiro, verifique se seu {0} está conectado em seu computador com o cabo USB.", boardName)}
                         </div>
                     </div>
                 </div>
@@ -161,9 +161,9 @@ function showConnectDeviceDialogAsync(confirmAsync: ConfirmAsync) {
         hideClose: true,
         confirmAsync,
         jsxd,
-        buttonLabel: lf("Next"),
+        buttonLabel: lf("Próximo"),
         buttonIcon: pxt.appTarget?.appTheme?.downloadDialogTheme?.deviceIcon,
-        header: lf("1. Connect your {0} to your computer", boardName),
+        header: lf("1. Conectar seu {0} em seu computador", boardName),
         tick: "downloaddialog.button.connectusb",
     });
 }
@@ -180,13 +180,13 @@ function showPickWebUSBDeviceDialogAsync(confirmAsync: ConfirmAsync, showDownloa
                 <div className="ui">
                     <div className="content">
                         <div className="description">
-                            {lf("Press the Pair button below.")}
+                            {lf("Pressione o botão de parear abaixo!")}
                             <br />
                             <br />
-                            {lf("A window will appear in the top of your browser.")}
+                            {lf("Uma janela aparecerá na parte superior do seu navegador.")}
                             <br />
                             <br />
-                            {lf("Select the {0} device and click Connect.", boardName)}
+                            {lf("Selecione o dispositivo {0} e clique en conectar.", boardName)}
                         </div>
                     </div>
                 </div>
@@ -206,10 +206,10 @@ function showPickWebUSBDeviceDialogAsync(confirmAsync: ConfirmAsync, showDownloa
     return showPairStepAsync({
         confirmAsync,
         jsxd,
-        buttonLabel: lf("Pair"),
+        buttonLabel: lf("Parear"),
         buttonIcon: pxt.appTarget?.appTheme?.downloadDialogTheme?.deviceIcon,
         showDownloadAsFileButton,
-        header: lf("2. Pair your {0} to your browser", boardName),
+        header: lf("2. Parear seu {0} em seu navegador", boardName),
         tick: "downloaddialog.button.pickusbdevice",
         doNotHideOnAgree: true,
     });
@@ -226,7 +226,7 @@ function showConnectionSuccessAsync(confirmAsync: ConfirmAsync, willTriggerDownl
                 <div className="ui">
                     <div className="content">
                         <div className="description">
-                            {lf("Your {0} is connected! Pressing 'Download' will now automatically copy your code to your {0}.", boardName)}
+                            {lf("Seu {0} está conectado! Pressione 'Baixar' agora copiará automaticamente seu código para o seu {0}.", boardName)}
                         </div>
                     </div>
                 </div>
@@ -246,9 +246,9 @@ function showConnectionSuccessAsync(confirmAsync: ConfirmAsync, willTriggerDownl
     return showPairStepAsync({
         confirmAsync,
         jsxd,
-        buttonLabel: willTriggerDownloadOnClose ? lf("Download") : lf("Done"),
+        buttonLabel: willTriggerDownloadOnClose ? lf("Baixar") : lf("Feito"),
         buttonIcon: pxt.appTarget.appTheme.downloadDialogTheme?.deviceSuccessIcon,
-        header: lf("Connected to {0}", boardName),
+        header: lf("Conectado ao {0}", boardName),
         tick: "downloaddialog.button.webusbsuccess",
         help: undefined,
         headerIcon: "large circle check purple",
@@ -258,20 +258,20 @@ function showConnectionSuccessAsync(confirmAsync: ConfirmAsync, willTriggerDownl
 
 function showConnectionFailureAsync(confirmAsync: ConfirmAsync, showDownloadAsFileButton: boolean, error: any) {
     const boardName = getBoardName();
-    const tryAgainText = lf("Try Again");
+    const tryAgainText = lf("Tentar novamente");
     const helpText = lf("Help");
-    const downloadAsFileText = lf("Download as File");
+    const downloadAsFileText = lf("Baixar como arquivo");
 
     const errorDisplay = error?.type === "devicelocked"
-        ? lf("We couldn't connect to your {0}. It may be in use by another application.", boardName)
-        : lf("We couldn't find your {0}.", boardName);
+        ? lf("Não foi possível conectar-se ao seu {0}. Pode estar em uso por outro aplicativo.", boardName)
+        : lf("Não foi possível encontrar seu {0}.", boardName);
     const jsxd = () => (
         <div>
             <div className="ui content download-troubleshoot-header">
                 {errorDisplay}
                 <br />
                 <br />
-                {lf("Click \"{0}\" for more info, \"{1}\" to retry pairing, or \"{2}\" for drag-and-drop flashing.", helpText, tryAgainText, downloadAsFileText)}
+                {lf("Clique em \"{0}\" para obter mais informações, em \"{1}\" para tentar emparelhar novamente ou em \"{2}\" para arrastar e soltar.", helpText, tryAgainText, downloadAsFileText)}
             </div>
         </div>
     );
@@ -282,7 +282,7 @@ function showConnectionFailureAsync(confirmAsync: ConfirmAsync, showDownloadAsFi
         jsxd,
         buttonLabel: tryAgainText,
         buttonIcon: pxt.appTarget?.appTheme?.downloadDialogTheme?.deviceIcon,
-        header: lf("Failed to connect"),
+        header: lf("Falha ao se conectar"),
         tick: "downloaddialog.button.webusbfailed",
         help: theme().troubleshootWebUSBHelpURL,
         headerIcon: "exclamation triangle purple",
@@ -346,7 +346,7 @@ async function showPairStepAsync({
 
     if (showDownloadAsFileButton) {
         buttons.unshift({
-            label: lf("Download as File"),
+            label: lf("Baixar como arquivo"),
             className: "secondary",
             icon: pxt.appTarget.appTheme.downloadIcon || "xicon file-download",
             labelPosition: "left",
@@ -384,7 +384,7 @@ async function showPairStepAsync({
 
 export function webUsbPairLegacyDialogAsync(pairAsync: () => Promise<boolean>, confirmAsync: ConfirmAsync): Promise<number> {
     let failedOnce = false;
-    const boardName = pxt.appTarget.appTheme.boardName || lf("device");
+    const boardName = pxt.appTarget.appTheme.boardName || lf("aparelho");
     const helpUrl = pxt.appTarget.appTheme.usbDocs;
     const jsxd = () => {
         const firmwareUrl = failedOnce && resolveFirmwareUrl();
@@ -396,9 +396,9 @@ export function webUsbPairLegacyDialogAsync(pairAsync: () => Promise<boolean>, c
                 <div className="ui">
                     <div className="content">
                         <div className="description">
-                            {lf("Update Firmware")}
+                            {lf("Atualizar Firmware")}
                             <br />
-                            <a href={firmwareUrl} target="_blank" rel="noopener noreferrer">{lf("Check your firmware version and update if needed")}</a>
+                            <a href={firmwareUrl} target="_blank" rel="noopener noreferrer">{lf("Verifique a versão do firmware e atualize se necessário")}</a>
                         </div>
                     </div>
                 </div>
@@ -408,7 +408,7 @@ export function webUsbPairLegacyDialogAsync(pairAsync: () => Promise<boolean>, c
                     <div className="content">
                         <div className="description">
                             <span className="ui yellow circular label">1</span>
-                            {lf("Connect {0} to your computer with a USB cable", boardName)}
+                            {lf("Conecte {0} ao seu computador com um cabo USB", boardName)}
                             <br />
                         </div>
                     </div>
@@ -419,7 +419,7 @@ export function webUsbPairLegacyDialogAsync(pairAsync: () => Promise<boolean>, c
                     <div className="content">
                         <div className="description">
                             <span className="ui blue circular label">2</span>
-                            {lf("Select the device in the pairing dialog")}
+                            {lf("Selecione o dispositivo na caixa de diálogo de emparelhamento")}
                         </div>
                     </div>
                 </div>
@@ -429,7 +429,7 @@ export function webUsbPairLegacyDialogAsync(pairAsync: () => Promise<boolean>, c
                     <div className="content">
                         <div className="description">
                             <span className="ui blue circular label">3</span>
-                            {lf("Press \"Connect\"")}
+                            {lf("Pressione \"Conectar\"")}
                         </div>
                     </div>
                 </div>

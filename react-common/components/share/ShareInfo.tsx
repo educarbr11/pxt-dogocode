@@ -317,14 +317,14 @@ export const ShareInfo = (props: ShareInfoProps) => {
 
     const prePublish = shareState === "share" || shareState === "publishing";
 
-    const inputTitle = prePublish ? lf("Project Title") : lf("Project Link")
+    const inputTitle = prePublish ? lf("Título do Projeto") : lf("Link do Projeto")
 
     return <>
         <div className="project-share-info">
             {showSimulator && shareState !== "gifrecord" &&
                 <div className="project-share-thumbnail">
                     {thumbnailUri
-                        ? <img src={thumbnailUri} alt={lf("Preview of your code running on the simulator")} aria-label={lf("Simulator preview")}/>
+                        ? <img src={thumbnailUri} alt={lf("Pré-visualização do seu código rodando no simulador")} aria-label={lf("Simulator preview")}/>
                         : <div className="project-thumbnail-placeholder">
                              <div className="common-spinner" />
                         </div>
@@ -332,7 +332,7 @@ export const ShareInfo = (props: ShareInfoProps) => {
                     {shareState !== "publish" &&
                         <Button
                             className="link-button"
-                            title={lf("Update project thumbnail")}
+                            title={lf("Atualizar miniatura do projeto")}
                             label={lf("Update project thumbnail")}
                             onClick={() => setShareState("gifrecord")} />
                     }
@@ -348,11 +348,11 @@ export const ShareInfo = (props: ShareInfoProps) => {
                             ariaDescribedBy="share-input-title"
                             className="name-input"
                             initialValue={name}
-                            placeholder={lf("Name your project")}
+                            placeholder={lf("Nome do seu projeto")}
                             onChange={setName} />
                         {isLoggedIn && hasProjectBeenPersistentShared && <Checkbox
                             id="persistent-share-checkbox"
-                            label={lf("Update existing share link for this project")}
+                            label={lf("Atualizar link de compartilhamento existente para este projeto")}
                             isChecked={!isAnonymous}
                             onChange={handleAnonymousShareClick}
                             />}
@@ -362,8 +362,8 @@ export const ShareInfo = (props: ShareInfoProps) => {
                         {shareData?.error && <div className="project-share-error">
                             {(shareData.error.statusCode === 413
                                 && pxt.appTarget?.cloud?.cloudProviders?.github)
-                                ? lf("Oops! Your project is too big. You can create a GitHub repository to share it.")
-                                : lf("Oops! There was an error. Please ensure you are connected to the Internet and try again.")}
+                                ? lf("Ops! Seu projeto é muito grande. Você pode criar um repositório GitHub para compartilhá-lo.")
+                                : lf("Ops! Ocorreu um erro. Certifique-se de estar conectado à Internet e tente novamente.")}
                         </div>}
                         <div className="project-share-publish-actions">
                             {shareState === "share" &&
@@ -413,8 +413,8 @@ export const ShareInfo = (props: ShareInfoProps) => {
                                     readOnly={true}
                                     onChange={setName} />
                                 <Button className={copySuccessful ? "green" : "primary"}
-                                    title={lf("Copy link")}
-                                    label={copySuccessful ? lf("Copied!") : lf("Copy")}
+                                    title={lf("Copiar link")}
+                                    label={copySuccessful ? lf("Copiado!") : lf("Copiar")}
                                     leftIcon="fas fa-link"
                                     onClick={handleCopyClick}
                                     onBlur={handleCopyBlur} />

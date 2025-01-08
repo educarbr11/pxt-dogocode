@@ -318,22 +318,22 @@ export class SettingsMenu extends data.Component<SettingsMenuProps, SettingsMenu
 
         return <sui.DropdownMenu role="menuitem" icon={'setting large'} title={lf("Configurações")} className="item icon more-dropdown-menuitem" ref={ref => this.dropdown = ref}>
             {showHome && <sui.Item className="mobile only inherit" role="menuitem" icon="home" title={lf("Início")} text={lf("Início")} ariaLabel={lf("Home screen")} onClick={this.showExitAndSaveDialog} />}
-            {showShare && <sui.Item className="mobile only inherit" role="menuitem" icon="share alternate" title={lf("Publish your game to create a shareable link")} text={lf("Share")} ariaLabel={lf("Share Project")} onClick={this.showShareDialog} />}
+            {showShare && <sui.Item className="mobile only inherit" role="menuitem" icon="share alternate" title={lf("Publique seu jogo com um link compatilhavel")} text={lf("Compartilhar")} ariaLabel={lf("Compartilhar projeto")} onClick={this.showShareDialog} />}
             {(showHome || showShare) && <div className="ui divider mobile only inherit" />}
-            {showProjectSettings ? <sui.Item role="menuitem" icon="options" text={lf("Project Settings")} onClick={this.openSettings} /> : undefined}
-            {packages ? <sui.Item role="menuitem" icon="disk outline" text={lf("Extensions")} onClick={this.showPackageDialog} /> : undefined}
-            {showPairDevice ? <sui.Item role="menuitem" icon={usbIcon} text={lf("Connect Device")} onClick={this.pair} /> : undefined}
-            {pxt.webBluetooth.isAvailable() ? <sui.Item role="menuitem" icon='bluetooth' text={lf("Pair Bluetooth")} onClick={this.pairBluetooth} /> : undefined}
-            {showPrint ? <sui.Item role="menuitem" icon="print" text={lf("Print...")} onClick={this.print} /> : undefined}
-            {showSave ? <sui.Item role="menuitem" icon="save" text={lf("Save Project")} onClick={this.saveProject} /> : undefined}
-            {!isController ? <sui.Item role="menuitem" icon="trash" text={lf("Delete Project")} onClick={this.removeProject} /> : undefined}
-            {targetTheme.timeMachine ? <sui.Item role="menuitem" icon="history" text={lf("Version History")} onClick={this.showTurnBackTimeDialog} /> : undefined}
+            {showProjectSettings ? <sui.Item role="menuitem" icon="options" text={lf("Configuração do projeto")} onClick={this.openSettings} /> : undefined}
+            {/* {packages ? <sui.Item role="menuitem" icon="disk outline" text={lf("Extensões")} onClick={this.showPackageDialog} /> : undefined} */}
+            {showPairDevice ? <sui.Item role="menuitem" icon={usbIcon} text={lf("Conectar dispositivo")} onClick={this.pair} /> : undefined}
+            {pxt.webBluetooth.isAvailable() ? <sui.Item role="menuitem" icon='bluetooth' text={lf("Parear Bluetooth")} onClick={this.pairBluetooth} /> : undefined}
+            {showPrint ? <sui.Item role="menuitem" icon="print" text={lf("Print da tela...")} onClick={this.print} /> : undefined}
+            {showSave ? <sui.Item role="menuitem" icon="save" text={lf("Salvar Projeto")} onClick={this.saveProject} /> : undefined}
+            {!isController ? <sui.Item role="menuitem" icon="trash" text={lf("Deletar Projeto")} onClick={this.removeProject} /> : undefined}
+            {targetTheme.timeMachine ? <sui.Item role="menuitem" icon="history" text={lf("Histórico de versão")} onClick={this.showTurnBackTimeDialog} /> : undefined}
             {showSimCollapse ? <sui.Item role="menuitem" icon='toggle right' text={simCollapseText} onClick={this.toggleCollapse} /> : undefined}
             <div className="ui divider"></div>
             {targetTheme.selectLanguage ? <sui.Item icon='xicon globe' role="menuitem" text={lf("Language")} onClick={this.showLanguagePicker} /> : undefined}
-            {targetTheme.highContrast ? <sui.Item role="menuitem" text={highContrast ? lf("High Contrast Off") : lf("High Contrast On")} onClick={this.toggleHighContrast} /> : undefined}
-            {targetTheme.accessibleBlocks ? <sui.Item role="menuitem" text={accessibleBlocks ? lf("Accessible Blocks Off") : lf("Accessible Blocks On")} onClick={this.toggleAccessibleBlocks} /> : undefined}
-            {showGreenScreen ? <sui.Item role="menuitem" text={greenScreen ? lf("Green Screen Off") : lf("Green Screen On")} onClick={this.toggleGreenScreen} /> : undefined}
+            {targetTheme.highContrast ? <sui.Item role="menuitem" text={highContrast ? lf("Alto contraste desligado") : lf("Alto contraste ligado")} onClick={this.toggleHighContrast} /> : undefined}
+            {targetTheme.accessibleBlocks ? <sui.Item role="menuitem" text={accessibleBlocks ? lf("Blocos acessíveis Off") : lf("Blocos acessíveis On")} onClick={this.toggleAccessibleBlocks} /> : undefined}
+            {showGreenScreen ? <sui.Item role="menuitem" text={greenScreen ? lf("Tela verde Desligada") : lf("Telas verde Ligada")} onClick={this.toggleGreenScreen} /> : undefined}
             {docItems && renderDocItems(this.props.parent, docItems, "setting-docs-item mobile only inherit")}
             {githubUser ? <div className="ui divider"></div> : undefined}
             {githubUser ? <div className="ui item" title={lf("Unlink {0} from GitHub", githubUser.name)} role="menuitem" onClick={this.signOutGithub}>
@@ -343,9 +343,9 @@ export class SettingsMenu extends data.Component<SettingsMenuProps, SettingsMenu
                 {lf("Disconnect GitHub")}
             </div> : undefined}
             {showCenterDivider && <div className="ui divider"></div>}
-            {reportAbuse ? <sui.Item role="menuitem" icon="warning circle" text={lf("Report Abuse...")} onClick={this.showReportAbuse} /> : undefined}
-            {!isController ? <sui.Item role="menuitem" icon='sign out' text={lf("Reset")} onClick={this.showResetDialog} /> : undefined}
-            <sui.Item role="menuitem" text={lf("About...")} onClick={this.showAboutDialog} />
+            {/* {reportAbuse ? <sui.Item role="menuitem" icon="warning circle" text={lf("Report Abuse...")} onClick={this.showReportAbuse} /> : undefined} */}
+            {!isController ? <sui.Item role="menuitem" icon='sign out' text={lf("Resetar")} onClick={this.showResetDialog} /> : undefined}
+            <sui.Item role="menuitem" text={lf("Sobre...")} onClick={this.showAboutDialog} />
             {
                 // we always need a way to clear local storage, regardless if signed in or not
             }
@@ -430,7 +430,7 @@ class BlocksMenuItem extends data.Component<ISettingsProps, {}> {
     }
 
     renderCore() {
-        return <BaseMenuItemProps className="blocks-menuitem" icon="xicon blocks" text={lf("Blocks")} title={lf("Converter código para Blocos")} onClick={this.onClick} isActive={this.isActive} parent={this.props.parent} />
+        return <BaseMenuItemProps className="blocks-menuitem" icon="xicon blocks" text={lf("Blocos")} title={lf("Converter código para Blocos")} onClick={this.onClick} isActive={this.isActive} parent={this.props.parent} />
     }
 }
 
@@ -451,7 +451,7 @@ class SandboxMenuItem extends data.Component<ISettingsProps, {}> {
     renderCore() {
         const active = this.isActive();
         const isRunning = this.props.parent.state.simState == SimState.Running;
-        const runTooltip = isRunning ? lf("Stop the simulator") : lf("Start the simulator");
+        const runTooltip = isRunning ? lf("Parar o simulador") : lf("Iniciar o simulador");
 
         return <BaseMenuItemProps className="sim-menuitem" icon={active && isRunning ? "stop" : "play"} text={lf("Simulator")} title={!active ? lf("Show Simulator") : runTooltip} onClick={this.onClick} isActive={this.isActive} parent={this.props.parent} />
     }

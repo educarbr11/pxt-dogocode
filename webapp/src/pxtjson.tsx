@@ -50,7 +50,7 @@ export class Editor extends srceditor.Editor {
         this.isSaving = true;
         if (!c.name) {
             // Error saving no name
-            core.errorNotification(lf("Please choose a project name. It can't be blank."));
+            core.errorNotification(lf("Escolha um nome de projeto. Não pode ficar em branco."));
             this.isSaving = false;
             return;
         }
@@ -142,14 +142,14 @@ export class Editor extends srceditor.Editor {
             <div className="ui content">
                 <div className="ui small header">
                     <div className="content">
-                        <sui.Button autoFocus title={lf("Go back")} tabIndex={0} onClick={this.goBack} onKeyDown={fireClickOnEnter}>
+                        <sui.Button autoFocus title={lf("Voltar")} tabIndex={0} onClick={this.goBack} onKeyDown={fireClickOnEnter}>
                             <sui.Icon icon="arrow left" />
-                            <span className="ui text landscape only">{lf("Go back")}</span>
+                            <span className="ui text landscape only">{lf("Voltar")}</span>
                         </sui.Button>
                     </div>
                 </div>
                 <div className="ui segment form text">
-                    <sui.Input ref={this.handleNameInputRef} id={"fileNameInput"} label={lf("Name")} ariaLabel={lf("Type a name for your project")} value={c.name || ''} onChange={this.setFileName} autoComplete={false} />
+                    <sui.Input ref={this.handleNameInputRef} id={"fileNameInput"} label={lf("Nome")} ariaLabel={lf("Escreva um nome para seu projeto")} value={c.name || ''} onChange={this.setFileName} autoComplete={false} />
                     {userConfigs.map(uc =>
                         <UserConfigCheckbox
                             key={`userconfig-${uc.description}`}
@@ -158,8 +158,8 @@ export class Editor extends srceditor.Editor {
                             applyUserConfig={this.applyUserConfig} />
                     )}
                     <sui.Field>
-                        <sui.Button text={lf("Save")} className={`green ${this.isSaving ? 'disabled' : ''}`} onClick={this.saveOnClick} />
-                        <sui.Button text={lf("Edit Settings As text")} onClick={this.editSettingsText} />
+                        <sui.Button text={lf("Salvar")} className={`green ${this.isSaving ? 'disabled' : ''}`} onClick={this.saveOnClick} />
+                        <sui.Button text={lf("Editar como texto")} onClick={this.editSettingsText} />
                     </sui.Field>
                 </div>
             </div>

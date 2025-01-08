@@ -371,7 +371,7 @@ export class AppModalImpl extends React.Component<AppModalProps, AppModalState> 
 
 
         return <Modal
-            title={lf("Share Project")}
+            title={lf("Compatilhar projeto")}
             className="sharedialog"
             parentElement={document.getElementById("root") || undefined}
             onClose={this.handleOnClose}>
@@ -391,7 +391,7 @@ export class AppModalImpl extends React.Component<AppModalProps, AppModalState> 
         }
 
         return <>
-            {activityPrompt && <SignInModal appMessage={lf("Nice work! You've completed this activity.")} onSignIn={signInAsync} onClose={this.handleOnClose} />}
+            {activityPrompt && <SignInModal appMessage={lf("Bom trabalho! Você concluiu esta atividade.")} onSignIn={signInAsync} onClose={this.handleOnClose} />}
             {!activityPrompt && <SignInModal onSignIn={signInAsync} onClose={this.handleOnClose} />}
         </>
     }
