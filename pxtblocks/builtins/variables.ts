@@ -109,17 +109,17 @@ export function initVariables() {
     installBuiltinHelpInfo(variablesReporterGetId);
 
     // Dropdown menu of variables_get
-    msg.RENAME_VARIABLE = lf("Rename variable...");
-    msg.DELETE_VARIABLE = lf("Delete the \"%1\" variable");
-    msg.DELETE_VARIABLE_CONFIRMATION = lf("Delete %1 uses of the \"%2\" variable?");
-    msg.NEW_VARIABLE_DROPDOWN = lf("New variable...");
+    msg.RENAME_VARIABLE = lf("Renomear váriavel...");
+    msg.DELETE_VARIABLE = lf("Deletar a \"%1\" variável");
+    msg.DELETE_VARIABLE_CONFIRMATION = lf("Deletar %1 uso \"%2\" variável?");
+    msg.NEW_VARIABLE_DROPDOWN = lf("Nova variável...");
 
     // builtin variables_set
     const variablesSetId = "variables_set";
     const variablesSetDef = pxt.blocks.getBlockDefinition(variablesSetId);
     msg.VARIABLES_SET = variablesSetDef.block["VARIABLES_SET"];
     msg.VARIABLES_DEFAULT_NAME = varname;
-    msg.VARIABLES_SET_CREATE_GET = lf("Create 'get %1'");
+    msg.VARIABLES_SET_CREATE_GET = lf("Criar 'get %1'");
     installBuiltinHelpInfo(variablesSetId);
 
     // pxt variables_change

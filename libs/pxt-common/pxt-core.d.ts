@@ -30,7 +30,7 @@ interface Array<T> {
       */
     //% help=arrays/pop
     //% shim=Array_::pop weight=45
-    //% blockId="array_pop" block="pegar e remover o último valor de %list(lista)" blockNamespace="arrays"
+    //% blockId="array_pop" block="guardar e remover o último valor de %list(lista)" blockNamespace="arrays"
     //% group="LER"
     pop(): T;
 
@@ -48,7 +48,7 @@ interface Array<T> {
       */
     //% help=arrays/shift
     //% helper=arrayShift weight=30
-    //% blockId="array_shift" block="obter e remover o primeiro valor de %list(lista)" blockNamespace="arrays"
+    //% blockId="array_shift" block="guardar e remover o primeiro valor de %list(lista)" blockNamespace="arrays"
     //% group="LER"
     shift(): T;
 
@@ -159,7 +159,7 @@ interface Array<T> {
     /** Remove e retorna o elemento em um determinado índice. */
     //% help=arrays/remove-at
     //% shim=Array_::removeAt weight=47
-    //% blockId="array_removeat" block="%list(lista)| obter e remover o valor no índice %index" blockNamespace="arrays"
+    //% blockId="array_removeat" block="%list(lista)| remover valor da lista no índice %index" blockNamespace="arrays"
     //% group="LER"
     removeAt(index: number): T;
 

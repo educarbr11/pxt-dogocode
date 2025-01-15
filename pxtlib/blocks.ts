@@ -627,7 +627,7 @@ namespace pxt.blocks {
                 url: '/reference/arrays/get',
                 category: 'arrays',
                 block: {
-                    message0: Util.lf("%1 obter valor em %2")
+                    message0: Util.lf("%1 valor da lista no índice %2")
                 }
             },
             'lists_index_set': {
