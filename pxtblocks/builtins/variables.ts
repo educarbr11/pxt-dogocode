@@ -15,7 +15,7 @@ export function initVariables() {
 
         if (!pxt.appTarget.appTheme.hideFlyoutHeadings) {
             // Add the Heading label
-            let headingLabel = createFlyoutHeadingLabel(lf("Variables"),
+            let headingLabel = createFlyoutHeadingLabel(lf("Variáveis"),
                 pxt.toolbox.getNamespaceColor('variables'),
                 pxt.toolbox.getNamespaceIcon('variables'));
             xmlList.push(headingLabel);

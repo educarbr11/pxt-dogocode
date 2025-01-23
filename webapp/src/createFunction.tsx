@@ -196,7 +196,7 @@ export class CreateFunctionDialog extends data.Component<ISettingsProps, CreateF
                     icon: pxt.blocks.defaultIconForArgType("string")
                 },
                 {
-                    label: lf("Boleano"),
+                    label: lf("Booleano"),
                     typeName: "boolean",
                     icon: pxt.blocks.defaultIconForArgType("boolean")
                 },

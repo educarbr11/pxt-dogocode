@@ -1036,7 +1036,7 @@ function renderLinksAsync(options: ClientRenderOptions, cls: string, replacePare
                         addCardItem(ul, {
                             name: ns ? "Variables" : "variable declaration",
                             url: "blocks/variables" + (ns ? "" : "/assign"),
-                            description: ns ? lf("Variables") : lf("Assign a value to a named variable."),
+                            description: ns ? lf("Variáveis") : lf("Assign a value to a named variable."),
                             blocksXml: '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="variables_set"></block></xml>'
                         });
                         break;

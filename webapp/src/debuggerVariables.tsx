@@ -89,7 +89,7 @@ export class DebuggerVariables extends data.Component<DebuggerVariablesProps, De
     renderCore() {
         const { globalFrame, stackFrames, frozen, preview } = this.state;
         const { activeFrame, breakpoint } = this.props;
-        const variableTableHeader = lf("Variables");
+        const variableTableHeader = lf("Variáveis");
         let variables = globalFrame.variables;
 
         // Add in the local variables.
