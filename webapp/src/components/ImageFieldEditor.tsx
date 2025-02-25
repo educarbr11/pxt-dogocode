@@ -123,15 +123,15 @@ export class ImageFieldEditor<U extends pxt.Asset> extends React.Component<Image
             onClick: this.showEditor,
             view: "editor"
         }, {
-            label: lf("Gallery"),
-            title: lf("Gallery"),
+            label: lf("Galeria"),
+            title: lf("Galeria"),
             focusable: true,
             icon: "fas fa-image",
             onClick: this.showGallery,
             view: "gallery"
         }, {
-            label: lf("My Assets"),
-            title: lf("My Assets"),
+            label: lf("Meus Arquivos"),
+            title: lf("Meus Arquivos"),
             focusable: true,
             icon: "fas fa-folder",
             onClick: this.showMyAssets,
