@@ -175,11 +175,11 @@ export class BottomBarImpl extends React.Component<BottomBarProps, BottomBarStat
                 </div>
                 {!hideDoneButton && <div role="button"
                     className={`image-editor-confirm`}
-                    title={lf("Done")}
+                    title={lf("Feito")}
                     tabIndex={0}
                     onClick={onDoneClick}
                     onKeyDown={fireClickOnlyOnEnter}>
-                        {lf("Done")}
+                        {lf("Feito")}
                 </div>}
             </div>
         );

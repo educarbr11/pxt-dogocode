@@ -152,7 +152,7 @@ export class FieldCustomMelody<U extends FieldCustomOptions> extends Blockly.Fie
 
         // Same toggle set up as sprite editor
         this.root = new svg.SVG(this.topDiv).id("melody-editor-header-controls");
-        this.toggle = new Toggle(this.root, { leftText: lf("Editor"), rightText: lf("Gallery"), baseColor: color });
+        this.toggle = new Toggle(this.root, { leftText: lf("Editor"), rightText: lf("Galeria"), baseColor: color });
         this.toggle.onStateChange(isLeft => {
             if (isLeft) {
                 this.hideGallery();
@@ -179,7 +179,7 @@ export class FieldCustomMelody<U extends FieldCustomOptions> extends Blockly.Fie
 
         this.doneButton = document.createElement("button");
         pxt.BrowserUtils.addClass(this.doneButton, "melody-confirm-button");
-        this.doneButton.innerText = lf("Done");
+        this.doneButton.innerText = lf("Feito");
         this.doneButton.addEventListener("click", () => this.onDone());
         this.doneButton.style.setProperty("background-color", color);
 

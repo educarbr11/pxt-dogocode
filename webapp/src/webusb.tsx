@@ -568,7 +568,7 @@ export async function showDeviceForgottenDialog(confirmAsync: ConfirmAsync) {
     await showPairStepAsync({
         confirmAsync,
         jsxd,
-        buttonLabel: lf("Done"),
+        buttonLabel: lf("Feito"),
         header: lf("{0} disconnected", boardName),
         tick: "downloaddialog.button.webusbforgotten",
         help: undefined,

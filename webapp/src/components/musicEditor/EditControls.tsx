@@ -57,8 +57,8 @@ export const EditControls = (props: EditControlsProps) => {
             onEnterKey={handleNameEdit} />
         {!hideDoneButton && <Button
             className="green"
-            title={lf("Done")}
-            label={lf("Done")}
+            title={lf("Feito")}
+            label={lf("Feito")}
             onClick={onDoneClicked} />}
     </div>
 }

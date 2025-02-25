@@ -76,10 +76,10 @@ const options: Category[] = [
 const tabs: PivotOption[] = [
     {
         id: "custom",
-        text: lf("My Tiles")
+        text: lf("Meus Tiles")
     }, {
         id: "gallery",
-        text: lf("Gallery")
+        text: lf("Galeria")
     }
 ]
 

@@ -864,7 +864,7 @@ export class ProjectView
             return core.confirmAsync({
                 header: lf("Oops, there is a problem converting your code."),
                 body: lf("We are unable to convert your code to Python."),
-                agreeLbl: lf("Done"),
+                agreeLbl: lf("Feito"),
                 agreeClass: "cancel",
                 agreeIcon: "cancel",
                 hasCloseIcon: true,
@@ -3163,7 +3163,7 @@ export class ProjectView
                     return core.confirmAsync({
                         header: lf("Oops, there is a problem converting your code."),
                         body: lf("We are unable to convert your code to JavaScript."),
-                        agreeLbl: lf("Done"),
+                        agreeLbl: lf("Feito"),
                         agreeClass: "cancel",
                         agreeIcon: "cancel",
                         hasCloseIcon: true,

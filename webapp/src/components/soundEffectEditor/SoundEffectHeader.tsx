@@ -18,8 +18,8 @@ export const SoundEffectHeader = (props: SoundEffectHeaderProps) => {
             focusable: true
         },
         {
-            label: pxt.U.lf("Gallery"),
-            title: pxt.U.lf("Gallery"),
+            label: pxt.U.lf("Galeria"),
+            title: pxt.U.lf("Galeria"),
             onClick: () => onViewSelected("gallery"),
             focusable: true
         }

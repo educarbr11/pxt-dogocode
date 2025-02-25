@@ -106,7 +106,7 @@ export class SnippetBuilder extends data.Component<SnippetBuilderProps, SnippetB
         let newActionButton: sui.ModalButton;
         if (this.isLastQuestion()) {
             newActionButton = {
-                label: lf("Done"),
+                label: lf("FeitoDone"),
                 onclick: this.confirm,
                 icon: "check",
                 className: "approve positive"
