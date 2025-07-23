@@ -204,7 +204,7 @@ export class ShareEditor extends auth.Component<ShareEditorProps, ShareEditorSta
                 className={`sharedialog${thumbnails ? " wide" : ""}`}
                 parentElement={document.getElementById("root") || undefined}
                 onClose={this.hide}>
-                <Share projectName={newProjectName}
+                <Share projectName={newProjectName} 
                     screenshotUri={screenshotUri}
                     isLoggedIn={hasIdentity}
                     publishAsync={publishAsync}
