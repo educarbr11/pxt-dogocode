@@ -109,17 +109,17 @@ export function initVariables() {
     installBuiltinHelpInfo(variablesReporterGetId);
 
     // Dropdown menu of variables_get
-    msg.RENAME_VARIABLE = lf("Rename variable...");
-    msg.DELETE_VARIABLE = lf("Delete the \"%1\" variable");
-    msg.DELETE_VARIABLE_CONFIRMATION = lf("Delete %1 uses of the \"%2\" variable?");
-    msg.NEW_VARIABLE_DROPDOWN = lf("New variable...");
+    msg.RENAME_VARIABLE = lf("Renomear a variável...");
+    msg.DELETE_VARIABLE = lf("Deletar \"%1\" variável");
+    msg.DELETE_VARIABLE_CONFIRMATION = lf("Deletar %1 usado em variável \"%2\"?");
+    msg.NEW_VARIABLE_DROPDOWN = lf("Nova varável...");
 
     // builtin variables_set
     const variablesSetId = "variables_set";
     const variablesSetDef = pxt.blocks.getBlockDefinition(variablesSetId);
     msg.VARIABLES_SET = variablesSetDef.block["VARIABLES_SET"];
     msg.VARIABLES_DEFAULT_NAME = varname;
-    msg.VARIABLES_SET_CREATE_GET = lf("Create 'get %1'");
+    msg.VARIABLES_SET_CREATE_GET = lf("Criar 'get %1'");
     installBuiltinHelpInfo(variablesSetId);
 
     // pxt variables_change
@@ -161,7 +161,7 @@ export function initVariables() {
                 };
 
                 let name = this.getField("VAR").getText();
-                option.text = lf("Create 'get {0}'", name)
+                option.text = lf("Criar 'get {0}'", name)
 
                 let xmlField = Blockly.utils.xml.createElement('field');
                 xmlField.textContent = name;

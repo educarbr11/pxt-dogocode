@@ -91,9 +91,9 @@ namespace pxt.toolbox {
         return "";
     }
 
-    export function advancedTitle() { return Util.lf("{id:category}Advanced"); }
-    export function addPackageTitle() { return Util.lf("{id:category}Extensions"); }
-    export function recipesTitle() { return Util.lf("{id:category}Tutorials"); }
+    export function advancedTitle() { return Util.lf("{id:category}Avançado"); }
+    export function addPackageTitle() { return Util.lf("{id:category}Extensões"); }
+    export function recipesTitle() { return Util.lf("{id:category}Tutoriais"); }
 
     /**
      * Convert blockly hue to rgb

@@ -528,7 +528,7 @@ function cachedBuiltinCategories(): pxt.Map<BuiltinCategoryDefinition> {
                         weight: 90
                     },
                     blockXml: `<block type="variables_set" gap="8">
-                        <field name="VAR" variabletype="">${lf("{id:var}list")}</field>
+                        <field name="VAR" variabletype="">${lf("{id:var}lista")}</field>
                         <value name="VALUE">
                             <block type="lists_create_with">
                                 <mutation items="2"></mutation>
@@ -554,7 +554,7 @@ function cachedBuiltinCategories(): pxt.Map<BuiltinCategoryDefinition> {
                         weight: 89
                     },
                     blockXml: `<block type="variables_set">
-                        <field name="VAR" variabletype="">${lf("{id:var}text list")}</field>
+                        <field name="VAR" variabletype="">${lf("{id:var}lista de texto")}</field>
                         <value name="VALUE">
                             <block type="lists_create_with">
                                 <mutation items="3"></mutation>
